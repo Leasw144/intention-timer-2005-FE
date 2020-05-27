@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.google.com/specimen/Montserrat?query=mont&selection.family=Montserrat:wght@300;400&sidebar.open" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <title>Intention Timer</title>
 </head>
+
 <body>
   <header>
     <h1>INTENTION TIMER</h1>
   </header>
-  <section class="main-page">
-  <div class="container">
-    <div class="buttons-box">
-      <button class="study-btn choice-button">
-        <img src="./assets/study.svg" />
-        <h4>Study</h4>
-      </button>
-      <button class="meditate-btn choice-button">
-        <img src="./assets/meditate.svg"/>
-        <h4>Meditate</h4>
-      </button>
-      <button class="exercise-btn choice-button">
-        <img src="./assets/exercise.svg" />
-        <h4>Exercise</h4>
-      </button>
-    </div>
-    <div class="activity-form">
+  <main class="main-page">
+    <section class="section-left">
+      <h2>New Activity</h2>
+      <div class="container">
+        <h3>Select a category</h3>
+        <div class="buttons-box">
+          <button class="study-btn choice-button">
+            <img src="./assets/study.svg" />
+            <h4>Study</h4>
+          </button>
+          <button class="meditate-btn choice-button">
+            <img src="./assets/meditate.svg" />
+            <h4>Meditate</h4>
+          </button>
+          <button class="exercise-btn choice-button">
+            <img src="./assets/exercise.svg" />
+            <h4>Exercise</h4>
+          </button>
+        </div>
         <form class="my-form">
           <div class="form-group">
             <label> What would you like to accomplish during this time? </label>
@@ -43,15 +47,15 @@
           <button class="button" type="submit" value="submit"></button>
         </form>
       </div>
-    </div>
-    <div class="right">
+    </section>
+    <section class="section-right">
       <h2>Past Activities</h2>
       <div class="logged-card">
         <h3>Text</h3>
         <p>Activities Completed</p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </body>
 
 </html>
