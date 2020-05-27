@@ -4,13 +4,18 @@ body {
   font-weight: 400;
 }
 
+.choice-button {
+  height: 2em;
+  width:2em;
+}
+
 .buttons-box {
   display: flex;
   justify-content: space-between;
 }
 .buttons-box > img {
-  height: 30px;
-  width: 30px;
+  height: 5em;
+  width: 5em;
 }
 .my-form {
   padding: 20px;
