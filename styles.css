@@ -103,7 +103,10 @@ header h1 {
   display: flex;
   justify-content: space-between;
   margin-top: 4em;
-  align-items: stretch;
+}
+
+.second-line > div {
+  width: 18em;
 }
 
 .start-btn {
