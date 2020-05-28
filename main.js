@@ -4,10 +4,15 @@ var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-btn')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var homePage = document. querySelector('.main-page')
+var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
 var completedActivityPage = document.querySelector('.completedActivity-page')
 //add hidden sections somewhere like in ROMCOM//
+//var hidden = document.querySelector('.hidden')
+//~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var currentGoal = document.querySelector('.goal')
+var currentMinutes = document.querySelector('.minutes')
+var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 startActivityButton.addEventListener('click', goToCurrentActivity-page)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,32 +36,12 @@ function handleClick(event) {
 */
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity
+var completedActivities
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-function goToCurrentActivityPage () {
-  currentActivity = new Activity(
-    this.category = category;
-    this.description = description;
-    this.minutes = minutes;
-    this.seconds = seconds;
-    this.completed = false;
-    this.id = id;
-  )
-  startTimer(){
 
-  }
-  markComplete(){
-
-  }
-  saveToStorage(){
-
-  }
-}
-function displayStudyActivityProperties(){
-  this.category = 'Study',
-  this.description = message.value;
-  this.minutes = minutes.value;
-  this.seconds = seconds.value;
-  this.completed = false;
-  this.id = ???
-}
+/* handling input from forms in ROMCOM, could be useful for Activity function
+function displayMyCover() {
+  coverImage.src = userCoverInput.value
+  return coverImage.src;
+*/
