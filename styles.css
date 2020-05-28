@@ -93,6 +93,7 @@ header h1 {
 
 .section-right {
   display: flex;
+  flex-direction: column;
   /* border: 2px solid #46424D; */
   width: 30%;
   height: 100%;
@@ -104,11 +105,19 @@ header h1 {
 .logged-card {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 5em;
+  width: 95%;
+  height: fit-content;
   border: 1px solid gray;
   border-radius: 5%;
   background: #46424D;
+  margin: 0
+}
+
+
+
+.totalMinSec {
+  display: flex;
+  flex-direction: row;
 
 }
 
