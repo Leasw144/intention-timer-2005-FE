@@ -145,3 +145,8 @@ header h1 {
     color: #46424D;
     font-size: 1em;
   }
+
+.title-display {
+  padding-left:1em;
+  margin: 1em 0em 0em 0em ;
+}
