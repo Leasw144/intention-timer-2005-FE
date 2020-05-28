@@ -62,7 +62,7 @@ img {
   height: 30%;
   padding: 20px;
   background: #46424D;
-  
+  padding: 5em 0em;
 }
 .my-form .form-group {
   padding-bottom: 15px;
@@ -88,7 +88,7 @@ img {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 5% 10%;
+  padding: 2em 5em;
   background:#46424D;
   margin: 5%
 }
@@ -140,5 +140,6 @@ header h1 {
     height: 2em;
     width: 11em;
     background: #FFF;
-    color: #CBC9CF;
-}
+    color: #46424D;
+    font-size: 1em;
+  }
