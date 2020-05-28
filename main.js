@@ -1,14 +1,31 @@
 //~~~~~~~~~~~~~~~~~~'Control' class buttons~~~~~~~~~~~~~~~~~~~~~~
-var studyButton = document.querySelector()
-var meditateButton = document.querySelector()
-var exerciseButton = document.querySelector()
+var studyButton = document.querySelector('.study-btn')
+var meditateButton = document.querySelector('.meditate-btn')
+var exerciseButton = document.querySelector('.exercise-btn')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var homeSection = document. querySelector()
-var currentActivitySection = document.querySelector()
-var completedActivitySection = document.querySelector()
+var homePage = document. querySelector('.main-page')
+var currentActivityPage = document.querySelector('.currentActivity-page')
+var completedActivityPage = document.querySelector('.completedActivity-page')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-selectStudyButton.addEventListener('click', goToCurrentActivitySection)
+selectStudyButton.addEventListener('click', goToCurrentActivity-page)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function handleClick(event) {
+  if (event.target.className === '.study-btn') {
+    displayCurrentActivityPage();
+    displayStudyActivityProperties();
+  };
+  if (event.target.className === '.meditate-btn'){
+    displayCurrentActivityPage();
+    displayMeditateActivityProperties();
+  };
+  if (event.target.className === '.exercise-btn'){
+    displayCurrentActivityPage();
+    displayExerciseActivityProperties();
+  }
+  //if (condition === true && event.target.id === 'go-back-button'){
+    //displayPreviousPage();
+  }
+
 function goToCurrentActivitySection () {
   currentActivity = new Activity(
     this.category = category;
@@ -25,6 +42,14 @@ function goToCurrentActivitySection () {
 
   }
   saveToStorage(){
-    
+
   }
+}
+function displayStudyActivityProperties(){
+  this.category = 'Study',
+  this.description = message.value;
+  this.minutes = minutes.value;
+  this.seconds = seconds.value;
+  this.completed = false;
+  this.id = ???
 }
