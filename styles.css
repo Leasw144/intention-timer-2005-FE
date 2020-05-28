@@ -4,41 +4,17 @@ body {
   font-weight: 400;
 }
 
-
-.text-main  {
- color: #CBC9CF;
+header {
+  display: grid;
+  height: 10%;
+  background:#46424D;
+  margin: 0;
 }
 
-.text-header {
-  color:#46424D
+.title-display {
+  padding-left:1em;
+  margin: 1em 0em 0em 0em ;
 }
-
-.card-shadow {
-  color:#26222D
-}
-
-.text-card-head {
-  color: #FFF;
-}
-
-.study {
-  color:#B3FD78;
-}
-
-.meditate {
-  color: #C278FD;
-}
-.exercise {
-  color: #FD8078
-}
-
-.error {
-  color: #EFB7EC
-}
-
-
-
-
 
 img {
   height: 20px;
@@ -93,12 +69,7 @@ img {
   margin: 0.5em 1.5em;
 }
 
-header {
-  display: grid;
-  height: 10%;
-  background:#46424D;
-  margin: 0;
-}
+
 header h1 {
   justify-self: center;
   color: #FFF;
@@ -146,7 +117,39 @@ header h1 {
     font-size: 1em;
   }
 
-.title-display {
-  padding-left:1em;
-  margin: 1em 0em 0em 0em ;
+
+
+/* //This is just a reference */
+
+.text-main  {
+ color: #CBC9CF;
 }
+
+.text-header {
+  color:#46424D
+}
+
+.card-shadow {
+  color:#26222D
+}
+
+.text-card-head {
+  color: #FFF;
+}
+
+.study {
+  color:#B3FD78;
+}
+
+.meditate {
+  color: #C278FD;
+}
+.exercise {
+  color: #FD8078
+}
+
+.error {
+  color: #EFB7EC
+}
+
+
