@@ -45,13 +45,6 @@ img {
   width: 20px;
 }
 
-/* .choice-button {
-  height: 80px;
-  width: 160px;
-  background-color: #2b2733;
-  height: inherit;
-} */
-
 .buttons-box {
   display: flex;
   justify-content: space-between;
