@@ -2,13 +2,16 @@
 var studyButton = document.querySelector('.study-btn')
 var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
+var startActivityButton = document.querySelector('.start-btn')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document. querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
 var completedActivityPage = document.querySelector('.completedActivity-page')
+//add hidden sections somewhere like in ROMCOM//
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-selectStudyButton.addEventListener('click', goToCurrentActivity-page)
+startActivityButton.addEventListener('click', goToCurrentActivity-page)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* this is for iteration 3
 function handleClick(event) {
   if (event.target.className === '.study-btn') {
     displayCurrentActivityPage();
@@ -25,8 +28,12 @@ function handleClick(event) {
   //if (condition === true && event.target.id === 'go-back-button'){
     //displayPreviousPage();
   }
+*/
+//~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
+var currentActivity
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-function goToCurrentActivitySection () {
+function goToCurrentActivityPage () {
   currentActivity = new Activity(
     this.category = category;
     this.description = description;
