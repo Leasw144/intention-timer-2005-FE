@@ -74,7 +74,10 @@ img {
 .my-form input[type="text"]{
   padding: 8px;
   width:100%;
-  background: #46424D
+  background: #46424D;
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
 .my-form input[type="submit"]{
   background-color: #333;
