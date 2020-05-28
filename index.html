@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.google.com/specimen/Montserrat?query=mont&selection.family=Montserrat:wght@300;400&sidebar.open" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <title>Intention Timer</title>
 </head>
@@ -13,8 +12,8 @@
     <h1>INTENTION TIMER</h1>
   </header>
   <main class="main-page">
-    <section class="section-left">
-      <h2>New Activity</h2>
+    <section class="section-left text-main">
+      <h2 class='title-display'>New Activity</h2>
       <div class="container">
         <h3>Select a category</h3>
         <div class="buttons-box">
@@ -36,6 +35,8 @@
             <label> What would you like to accomplish during this time? </label>
             <input type="text" goal="goal">
           </div>
+
+        <div class='second-line'>
           <div class="form-group">
             <label> Minutes </label>
             <input type="text" minutes="minutes">
@@ -44,7 +45,10 @@
             <label> Seconds </label>
             <input type="text" seconds="seconds">
           </div>
-          <button class="button" type="submit" value="submit"></button>
+        </div>
+        <span class='start-btn'>
+          <button class='' type="submit" value="submit">Start Activity</button>
+        </span>
         </form>
       </div>
     </section>

@@ -4,30 +4,41 @@ body {
   font-weight: 400;
 }
 
+header {
+  display: grid;
+  height: 10%;
+  background:#46424D;
+  margin: 0;
+}
+
+.title-display {
+  padding-left:1em;
+  margin: 1em 0em 0em 0em ;
+}
+
 img {
   height: 20px;
   width: 20px;
 }
 
-.choice-button {
-  height: 80px;
-  width: 160px;
-}
-
 .buttons-box {
   display: flex;
   justify-content: space-between;
+  color: #CBC9CF
 }
 
 .choice-button {
-  height: 10%;
+  height: auto;
   width: 25%;
+  color: #CBC9CF;
+  background-color: #46424D;
 }
 
 .my-form {
   height: 30%;
   padding: 20px;
   background: #46424D;
+  padding: 5em 0em;
 }
 .my-form .form-group {
   padding-bottom: 15px;
@@ -38,6 +49,10 @@ img {
 .my-form input[type="text"]{
   padding: 8px;
   width:100%;
+  background: #46424D;
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
 .my-form input[type="submit"]{
   background-color: #333;
@@ -49,16 +64,12 @@ img {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 5% 10%;
+  padding: 2em 5em;
   background:#46424D;
+  margin: 0.5em 1.5em;
 }
 
-header {
-  display: grid;
-  height: 10%;
-  background:#46424D;
-  margin: 0;
-}
+
 header h1 {
   justify-self: center;
   color: #FFF;
@@ -73,14 +84,72 @@ header h1 {
 .section-left {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 2px solid #46424D;
   width: 70%;
   height: 100%;
+  background: #2b2733;
 }
 
 .section-right {
   display: flex;
-  border: 2px solid black;
+  border: 2px solid #46424D;
   width: 30%;
   height: 100%;
+  background: #2b2733;
 }
+
+.second-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.start-btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em 0em;
+}
+
+.start-btn > button {
+    height: 2em;
+    width: 11em;
+    background: #FFF;
+    color: #46424D;
+    font-size: 1em;
+  }
+
+
+
+/* //This is just a reference */
+
+.text-main  {
+ color: #CBC9CF;
+}
+
+.text-header {
+  color:#46424D
+}
+
+.card-shadow {
+  color:#26222D
+}
+
+.text-card-head {
+  color: #FFF;
+}
+
+.study {
+  color:#B3FD78;
+}
+
+.meditate {
+  color: #C278FD;
+}
+.exercise {
+  color: #FD8078
+}
+
+.error {
+  color: #EFB7EC
+}
+
+
