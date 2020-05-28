@@ -84,7 +84,7 @@ header h1 {
 .section-left {
   display: flex;
   flex-direction: column;
-  border: 2px solid #46424D;
+  border-right: 2px solid #46424D;
   width: 70%;
   height: 100%;
   background: #2b2733;
@@ -92,10 +92,23 @@ header h1 {
 
 .section-right {
   display: flex;
-  border: 2px solid #46424D;
+  /* border: 2px solid #46424D; */
   width: 30%;
   height: 100%;
   background: #2b2733;
+  margin: 0em 1.5em;
+  color: #fff;
+}
+
+.logged-card {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 5em;
+  border: 1px solid gray;
+  border-radius: 5%;
+  background: #46424D;
+
 }
 
 .second-line {
@@ -151,5 +164,3 @@ header h1 {
 .error {
   color: #EFB7EC
 }
-
-
