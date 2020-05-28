@@ -45,20 +45,24 @@ img {
   width: 20px;
 }
 
-.choice-button {
+/* .choice-button {
   height: 80px;
   width: 160px;
-}
+  background-color: #2b2733;
+  height: inherit;
+} */
 
 .buttons-box {
   display: flex;
   justify-content: space-between;
+  color: #CBC9CF
 }
 
 .choice-button {
-  height: 10%;
+  height: auto;
   width: 25%;
   color: #CBC9CF;
+  background-color: #46424D;
 }
 
 .my-form {
