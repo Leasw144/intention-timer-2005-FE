@@ -128,3 +128,15 @@ header h1 {
   display: flex;
   justify-content: space-between;
 }
+
+.start-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.start-btn > button {
+    height: 2em;
+    width: 11em;
+    background: #FFF;
+    color: #CBC9CF;
+}
