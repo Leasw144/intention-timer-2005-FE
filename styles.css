@@ -1,4 +1,5 @@
 body {
+  
   background-color:#2b2733;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
@@ -202,4 +203,16 @@ border-right: .5em solid #C278FD;
 
 .error {
   color: #EFB7EC
+}
+
+
+@media only screen and (max-width: 860px) {
+  body {
+    background-color: white;
+    display: flex;
+    flex-direction:column;
+  }
+  
+
+
 }
