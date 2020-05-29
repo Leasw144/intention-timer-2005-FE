@@ -1,4 +1,5 @@
 body {
+  
   background-color:#2b2733;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
@@ -19,6 +20,7 @@ header {
 img {
   height: 20px;
   width: 20px;
+  padding-top: 5px;
 }
 
 .buttons-box {
@@ -94,10 +96,19 @@ header h1 {
   background: #2b2733;
 }
 
+.temp-placeholder {
+  display: flex;
+  justify-content: center;
+}
+
+.category {
+border-right: .5em solid #C278FD;
+}
+
+
 .section-right {
   display: flex;
   flex-direction: column;
-  /* border: 2px solid #46424D; */
   width: 30%;
   height: 100%;
   background: #2b2733;
@@ -141,7 +152,7 @@ header h1 {
 }
 
 .second-line > div {
-  width: 18em;
+  width: 16em;
 }
 
 .start-btn {
@@ -174,6 +185,10 @@ header h1 {
   color:#26222D
 }
 
+h4 {
+  margin-top:3.5px;
+}
+
 .text-card-head {
   color: #FFF;
 }
@@ -193,3 +208,44 @@ header h1 {
 .error {
   color: #EFB7EC
 }
+
+@media only screen and (max-width: 1100px) {
+  .second-line > div {
+    width: 11em;
+  }
+
+    .start-btn {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+ 
+    display: flex;
+    flex-direction:column;
+  }
+
+  .section-right {
+    width: 97%;
+  }
+
+  .main-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-left {
+    width: 100%;
+    border-style:none;
+  }
+
+  .start-btn {
+    justify-content: center;
+  }
+
+  .second-line > div {
+    width: 7em;
+  }
+}
+
