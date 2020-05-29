@@ -204,16 +204,27 @@ border-right: .5em solid #C278FD;
   color: #EFB7EC
 }
 
+@media only screen and (max-width: 1100px) {
+  .second-line > div {
+    width: 11em;
+  }
 
+    .start-btn {
+    justify-content: center;
+  }
+}
 
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 650px) {
   body {
  
     display: flex;
     flex-direction:column;
   }
 
+  .section-right {
+    width: 97%;
+  }
+  
   .main-page {
     display: flex;
     flex-direction: column;
