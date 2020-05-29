@@ -94,6 +94,11 @@ header h1 {
   background: #2b2733;
 }
 
+.temp-placeholder {
+  display: flex;
+  justify-content: center;
+}
+
 .category {
 border-right: .5em solid #C278FD;
 }
