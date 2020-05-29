@@ -24,14 +24,16 @@ img {
 .buttons-box {
   display: flex;
   justify-content: space-between;
-  color: #CBC9CF
+  color: #CBC9CF;
 }
 
 .choice-button {
   height: auto;
   width: 25%;
+  border-color: #CBC9CF;
   color: #CBC9CF;
   background-color: #46424D;
+  border-radius: 3px;
 }
 
 .my-form {
@@ -68,6 +70,7 @@ img {
   background:#46424D;
   margin: 0.5em 1.5em;
   height: 33em;
+  border-radius: 3px;
 }
 
 
@@ -85,7 +88,7 @@ header h1 {
 .section-left {
   display: flex;
   flex-direction: column;
-  border: 2px solid #46424D;
+  border-right: 2px solid #46424D;
   width: 70%;
   height: 100%;
   background: #2b2733;
@@ -93,10 +96,42 @@ header h1 {
 
 .section-right {
   display: flex;
-  border: 2px solid #46424D;
+  flex-direction: column;
+  /* border: 2px solid #46424D; */
   width: 30%;
   height: 100%;
   background: #2b2733;
+  margin: 0em 1.5em;
+  color: #fff;
+}
+
+.logged-card {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: fit-content;
+  /* border: 1px solid gray; */
+  border-radius: 4px;
+  background: #46424D;
+  /* border-right: 30px solid purple; */
+  background-size: 50%;
+}
+
+.logged-card > h3, p {
+  margin: 0;
+  padding: 1% 2%;
+}
+
+/* .logged-card > p {
+  margin: 0;
+  padding: 1% 2%;
+} */
+
+.totalMinSec {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+
 }
 
 .second-line {
@@ -150,6 +185,7 @@ header h1 {
 .meditate {
   color: #C278FD;
 }
+
 .exercise {
   color: #FD8078
 }
@@ -157,5 +193,3 @@ header h1 {
 .error {
   color: #EFB7EC
 }
-
-
