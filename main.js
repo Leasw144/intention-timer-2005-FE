@@ -13,6 +13,15 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+studyButton.addEventListener('click', colorStudyBtn);
+// startActivityButton.addEventListener('click', goToCurrentActivityPage);
+//~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ITERATION 2 - BUTTON COLORS ON click Event
+
+function colorStudyBtn(event) {
+  studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
+  <h4 class="study">Study</h4>`;
+  }
 startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
@@ -20,6 +29,28 @@ function activateStartButton(){
   createNewActivity();
   console.log('this is working')
 }
+
+
+
+/* this is for iteration 3
+function handleClick(event) {
+  if (event.target.className === '.study-btn') {
+    displayCurrentActivityPage();
+    displayStudyActivityProperties();
+  };
+  if (event.target.className === '.meditate-btn'){
+    displayCurrentActivityPage();
+    displayMeditateActivityProperties();
+  };
+  if (event.target.className === '.exercise-btn'){
+    displayCurrentActivityPage();
+    displayExerciseActivityProperties();
+  }
+  //if (condition === true && event.target.id === 'go-back-button'){
+    //displayPreviousPage();
+  }
+*/
+
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity

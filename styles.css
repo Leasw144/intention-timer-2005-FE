@@ -64,12 +64,19 @@ header h1 {
   color: #CBC9CF;
   background-color: #46424D;
   border-radius: 4.5px;
+  cursor: pointer;
 }
 
 img {
   height: 20px;
   width: 20px;
   padding-top: 5px;
+}
+
+.study.btn {
+  background: url("./assets/study-active.svg");
+  border: 2px solid #B3FD78;
+  color: #B3FD78;
 }
 
 .my-form {
@@ -94,6 +101,8 @@ label {
   border-top: none;
   border-right: none;
   border-left: none;
+  color: #fff;
+  font-size: 20px;
 }
 
 .my-form input[type="submit"]{
