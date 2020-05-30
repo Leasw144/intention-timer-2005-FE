@@ -7,8 +7,7 @@ var startActivityButton = document.querySelector('.start-btn')
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
 var completedActivityPage = document.querySelector('.completedActivity-page')
-//add hidden sections somewhere like in ROMCOM//
-//var hidden = document.querySelector('.hidden')
+var hidden = document.querySelector('.hidden')
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
@@ -23,7 +22,13 @@ function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <h4 class="study">Study</h4>`;
   }
-
+startActivityButton.addEventListener('click', activateStartButton)
+//~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function activateStartButton(){
+  hideHomePage();
+  createNewActivity();
+  console.log('this is working')
+}
 
 
 
@@ -45,14 +50,23 @@ function handleClick(event) {
     //displayPreviousPage();
   }
 */
+
+
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity
 var completedActivities
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-
+function createNewActivity(){
+  currentActivity = new Activity
+}
 /* handling input from forms in ROMCOM, could be useful for Activity function
 function displayMyCover() {
   coverImage.src = userCoverInput.value
   return coverImage.src;
 */
+//~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
+function hideHomePage(){
+  homePage.classList.add('hidden')
+  currentActivityPage.classList.remove('hidden')
+}
