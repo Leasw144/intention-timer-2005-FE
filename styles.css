@@ -103,33 +103,6 @@ label {
   border: none;
 }
 
-.section-right {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  height: 100%;
-  background: #2b2733;
-  margin: 0em 1.5em;
-  color: #fff;
-}
-
-.past-activities-title {
-    margin: 1.5em 0em 0.5em 0em;
-}
-
-.logged-card {
-  height: 15%;
-  width: 95%;
-  margin: 2% 0%;
-  border-radius: 4px;
-  background: #46424D;
-}
-
-.logged-card > h3, p {
-  margin: 0;
-  padding: 1% 2%;
-}
-
 .second-line {
   display: flex;
   justify-content: space-between;
@@ -156,7 +129,33 @@ label {
     border-radius: 5px;
   }
 
+.section-right {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  background: #2b2733;
+  margin: 0em 1.5em;
+  color: #fff;
+}
 
+.past-activities-title {
+    margin: 1.5em 0em 0.5em 0em;
+}
+
+.logged-card {
+  height: 15%;
+  width: 95%;
+  margin: 2% 0%;
+  border-radius: 3.5px;
+  background: #46424D;
+  border-right: 4px solid #C278FD;
+}
+
+.logged-card > h3, p {
+  margin: 0;
+  padding: 1% 2%;
+}
 
 /* //This is just a reference */
 
