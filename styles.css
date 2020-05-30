@@ -48,7 +48,7 @@ header h1 {
   background:#46424D;
   margin: 0.5em 1.5em;
   height: 33em;
-  border-radius: 3px;
+  border-radius: 3.5px;
 }
 
 .buttons-box {
@@ -63,7 +63,7 @@ header h1 {
   border-color: #CBC9CF;
   color: #CBC9CF;
   background-color: #46424D;
-  border-radius: 3px;
+  border-radius: 4.5px;
 }
 
 img {
@@ -79,11 +79,11 @@ img {
   padding: 5em 0em;
 }
 
-.my-form .form-group {
+.form-group {
   padding-bottom: 15px;
 }
 
-.my-form label {
+label {
   display: inline;
 }
 
@@ -130,28 +130,6 @@ img {
   padding: 1% 2%;
 }
 
-/* .category {
-border-right: .5em solid #C278FD;
-} */
-
-/* .card-marker {
-  background-color: #C278FD;
-  height: 35px;
-  width: 7px;
-  margin-left: 95%
-} */
-
-/* .logged-card > p {
-  margin: 0;
-  padding: 1% 2%;
-} */
-
-.totalMinSec {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-}
-
 .second-line {
   display: flex;
   justify-content: space-between;
@@ -165,15 +143,17 @@ border-right: .5em solid #C278FD;
 .start-btn {
   display: flex;
   justify-content: flex-end;
-  padding: 2em 0em;
+  padding: 2.5em 0em;
 }
 
 .start-btn > button {
-    height: 2em;
-    width: 11em;
+    height: 2.5em;
+    width: 13em;
     background: #FFF;
     color: #46424D;
     font-size: 1em;
+    letter-spacing: .09;
+    border-radius: 5px;
   }
 
 
