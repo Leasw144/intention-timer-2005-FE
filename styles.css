@@ -238,6 +238,18 @@ h4 {
     border-style: none;
   }
 
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 5em;
+    background:#46424D;
+    margin: 0.5em 1.5em;
+    height: 33em;
+    border-radius: 3px;
+  }
+
   .choice-button {
     display: flex;
     flex-direction: column;
