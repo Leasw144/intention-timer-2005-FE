@@ -68,5 +68,4 @@ function displayMyCover() {
 //~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
 function hideHomePage(){
   homePage.classList.add('hidden')
-  currentActivityPage.classList.remove('hidden')
 }
