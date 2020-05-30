@@ -29,10 +29,9 @@ function colorStudyBtn(event) {
 function activateStartButton(){
   hideHomePage();
   createNewActivity();
+  renderCurrentActivity();
   console.log('this is working')
 }
-
-
 
 /* this is for iteration 3
 function handleClick(event) {
@@ -59,7 +58,30 @@ var currentActivity
 var completedActivities
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function createNewActivity(){
-  currentActivity = new Activity
+  currentActivity = new Activity (
+    'meditate',
+    currentGoal.value,
+    currentMinutes.value,
+    currentSeconds.value,
+  )
+  return currentActivity
+}
+function renderCurrentActivity(){
+  createNewActivity();
+    sectionLeft.innerHTML =  `
+      <section class="current-section-left text-main hidden">
+        <h2 class="new-activity-title">${currentActivity.category}</h2>
+        <div class="container">
+          <div class="description">
+          </div>
+          <div class = "timer">
+            <p> ${currentActivity.minutes} :  </p>
+          </div>
+          <div>
+            <p> ${currentActivity.seconds} </p>
+          </div>
+        </div>
+      </section>`
 }
 /* handling input from forms in ROMCOM, could be useful for Activity function
 function displayMyCover() {
