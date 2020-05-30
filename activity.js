@@ -5,14 +5,11 @@ class Activity {
     this.minutes = minutes;
     this.seconds = seconds;
     this.completed = false;
-    this.id = date.now();
+    this.id = Date.now();
   }
 
   startTimer(){
- // convert number of minutes into Seconds
- // set total number of seconds = to num var
- // create a for loop that calculates time per second,
- // for each second subtracted,
+
   }
 
   markComplete(){
@@ -24,3 +21,8 @@ class Activity {
   }
 
 }
+
+// convert number of minutes into Seconds
+// set total number of seconds = to num var
+// create a for loop that calculates time per second,
+// for each second subtracted,
