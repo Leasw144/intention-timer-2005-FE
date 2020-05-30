@@ -7,6 +7,8 @@ var startActivityButton = document.querySelector('.start-btn')
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
 var completedActivityPage = document.querySelector('.completedActivity-page')
+var sectionLeft = document.querySelector('.section-left')
+var currentSectionLeft = document.querySelector('.current-section-left')
 var hidden = document.querySelector('.hidden')
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
@@ -14,7 +16,7 @@ var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 studyButton.addEventListener('click', colorStudyBtn);
-// startActivityButton.addEventListener('click', goToCurrentActivityPage);
+startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Event
 
@@ -22,15 +24,14 @@ function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <h4 class="study">Study</h4>`;
   }
-startActivityButton.addEventListener('click', activateStartButton)
+
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
   hideHomePage();
   createNewActivity();
+  renderCurrentActivity();
   console.log('this is working')
 }
-
-
 
 /* this is for iteration 3
 function handleClick(event) {
@@ -56,9 +57,31 @@ function handleClick(event) {
 var currentActivity
 var completedActivities
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-
 function createNewActivity(){
-  currentActivity = new Activity
+  currentActivity = new Activity (
+    'meditate',
+    currentGoal.value,
+    currentMinutes.value,
+    currentSeconds.value,
+  )
+  return currentActivity
+}
+function renderCurrentActivity(){
+  createNewActivity();
+    sectionLeft.innerHTML =  `
+      <section class="current-section-left text-main hidden">
+        <h2 class="new-activity-title">${currentActivity.category}</h2>
+        <div class="container">
+          <div class="description">
+          </div>
+          <div class = "timer">
+            <p> ${currentActivity.minutes} :  </p>
+          </div>
+          <div>
+            <p> ${currentActivity.seconds} </p>
+          </div>
+        </div>
+      </section>`
 }
 /* handling input from forms in ROMCOM, could be useful for Activity function
 function displayMyCover() {
@@ -67,6 +90,6 @@ function displayMyCover() {
 */
 //~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
 function hideHomePage(){
-  homePage.classList.add('hidden')
-  currentActivityPage.classList.remove('hidden')
+  sectionLeft.classList.add('hidden')
+  currentSectionLeft.classList.remove('hidden')
 }

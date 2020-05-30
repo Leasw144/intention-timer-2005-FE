@@ -35,6 +35,7 @@
             <label> What would you like to accomplish during this time? </label>
             <input type="text" goal="goal">
           </div>
+
         <div class="second-line">
           <div class="form-group">
             <label> Minutes </label>
@@ -45,26 +46,12 @@
             <input type="text" seconds="seconds">
           </div>
         </div>
-          <span>
-            <button class="start-btn" type="button" value="submit">START ACTIVITY</button>
-          </span>
+        <span class='start-btn'>
+          <button class='' type="button">START ACTIVITY</button>
+        </span>
         </form>
       </div>
     </section>
-    <section class="current-section-left text-main hidden">
-        <h2 class="new-activity-title">Current Activity</h2>
-        <div class="container">
-          <div class="description">
-          Meditation
-          </div>
-          <div class = "timer">
-            <p> this is where the timer goes </p>
-          </div>
-          <div>
-            <p> this is where the start button goes </p>
-          </div>
-        </div>
-      </section>
     <section class="section-right text-main">
       <h2 class="past-activities-title">Past Activities</h2>
     <section class="category-cards">
@@ -75,8 +62,12 @@
       </div>
     </section>
     </section>
+    <section class = "currentActivity-page hidden">
+      <p> this is the current activity page </p>
+    </section>
   </main>
-  <script src="./activity.js"></script>
-  <script src="./main.js"></script>
+  <script src="activity.js"> </script>
+  <script src="main.js"> </script>
 </body>
+
 </html>
