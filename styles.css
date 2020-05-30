@@ -2,6 +2,7 @@ body {
   background-color: #2b2733;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
+  margin: 0;
 }
 
 header {
@@ -9,6 +10,7 @@ header {
   height: 10%;
   background: #46424D;
   margin: 0;
+  position: relative;
   font-weight: lighter !important;
   font-size: 15px;
   letter-spacing: .1em;
@@ -34,15 +36,15 @@ header h1 {
   background: #2b2733;
 }
 
-.title-display {
+.new-activity-title {
   padding-left: 1em;
-  margin: 1em 0em 0em 0em;
+  margin: 1.5em 0em 0.5em 0em;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  padding: 2em 5em;
+  padding: 3em 5em;
   background:#46424D;
   margin: 0.5em 1.5em;
   height: 33em;
@@ -116,15 +118,16 @@ img {
   color: #fff;
 }
 
+.past-activities-title {
+    margin: 1.5em 0em 0.5em 0em;
+}
+
 .logged-card {
-  /* display: flex;
-  flex-direction: column; */
-  height: 8px;
-  /* width: 40px; */
+  height: 15%;
+  width: 95%;
+  margin: 2% 0%;
   border-radius: 4px;
   background: #46424D;
-  /* transform: rotate(90deg);
-  margin-left: auto; */
 }
 
 .logged-card > h3, p {
@@ -136,12 +139,12 @@ img {
 border-right: .5em solid #C278FD;
 } */
 
-.card-marker {
+/* .card-marker {
   background-color: #C278FD;
   height: 35px;
   width: 7px;
   margin-left: 95%
-}
+} */
 
 /* .logged-card > p {
   margin: 0;
@@ -152,7 +155,6 @@ border-right: .5em solid #C278FD;
   display: flex;
   flex-direction: row;
   margin: 0;
-
 }
 
 .second-line {
