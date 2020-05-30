@@ -103,11 +103,6 @@ img {
   border: none;
 }
 
-/* .temp-placeholder {
-  display: flex;
-  justify-content: center;
-} */
-
 .section-right {
   display: flex;
   flex-direction: column;
