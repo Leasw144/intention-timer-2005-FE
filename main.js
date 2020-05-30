@@ -7,6 +7,8 @@ var startActivityButton = document.querySelector('.start-btn')
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
 var completedActivityPage = document.querySelector('.completedActivity-page')
+var sectionLeft = document.querySelector('.section-left')
+var currentSectionLeft = document.querySelector('.current-section-left')
 var hidden = document.querySelector('.hidden')
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
@@ -14,7 +16,7 @@ var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 studyButton.addEventListener('click', colorStudyBtn);
-// startActivityButton.addEventListener('click', goToCurrentActivityPage);
+startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Event
 
@@ -22,7 +24,7 @@ function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <h4 class="study">Study</h4>`;
   }
-startActivityButton.addEventListener('click', activateStartButton)
+
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
   hideHomePage();
@@ -56,7 +58,6 @@ function handleClick(event) {
 var currentActivity
 var completedActivities
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-
 function createNewActivity(){
   currentActivity = new Activity
 }
@@ -67,5 +68,6 @@ function displayMyCover() {
 */
 //~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
 function hideHomePage(){
-  homePage.classList.add('hidden')
+  sectionLeft.classList.add('hidden')
+  currentSectionLeft.classList.remove('hidden')
 }
