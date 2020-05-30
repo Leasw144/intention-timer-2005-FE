@@ -14,8 +14,19 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-startActivityButton.addEventListener('click', goToCurrentActivity-page)
+studyButton.addEventListener('click', colorStudyBtn);
+// startActivityButton.addEventListener('click', goToCurrentActivityPage);
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ITERATION 2 - BUTTON COLORS ON click Event
+
+function colorStudyBtn(event) {
+  studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
+  <h4 class="study">Study</h4>`;
+  }
+
+
+
+
 /* this is for iteration 3
 function handleClick(event) {
   if (event.target.className === '.study-btn') {
