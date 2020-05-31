@@ -300,4 +300,9 @@ h4 {
   .second-line > div {
     width: 7em;
   }
+
+  .study {
+  color:#B3FD78;
+  border-color:#B3FD78;
+}
 }

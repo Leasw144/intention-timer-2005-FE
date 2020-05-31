@@ -17,15 +17,24 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-buttons
-studyButton.addEventListener('click', colorStudyBtn);
-exerciseButton.addEventListener('click', colorExerciseBtn);
-meditateButton.addEventListener('click', colorMeditateBtn);
+categoryBoxes.addEventListener('click', activateCategory)
+// studyButton.addEventListener('click', colorStudyBtn);
+// exerciseButton.addEventListener('click', colorExerciseBtn);
+// meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
 
-function colorStudyBtn(event) {
+function activateCategory(event) {
+  console.log('OKAY', event.target)
+  if(event.target === studyButton) {
+    colorStudyBtn()
+  }
+}
+
+
+
+function colorStudyBtn() {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <h4 class="study">Study</h4>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
