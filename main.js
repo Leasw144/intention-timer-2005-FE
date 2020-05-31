@@ -50,11 +50,14 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
+  if (currentGoal !== null && currentMinutes !== null && currentSeconds !== null && (studyButton.innerHTML === `<img src="./assets/study-active.svg"/><h4 class="study">Study</h4>` || exerciseButton.innerHTML === `<img src="./assets/exercise-active.svg"/> <h4 class="exercise">Exercise</h4>` || meditateButton.innerHTML ===`<img src="./assets/meditate-active.svg"/> <h4 class="meditate">Meditate</h4>`)){
   createNewActivity();
   renderCurrentActivity();
   console.log('this is working')
+} else {
+  alert ('You need to complete all four forms before continuing!')
 }
-
+}
 /* this is for iteration 3
 function handleClick(event) {
   if (event.target.className === '.study-btn') {
