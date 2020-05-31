@@ -47,7 +47,7 @@ header h1 {
   padding: 3em 5em;
   background:#46424D;
   margin: 0.5em 1.5em;
-  height: 33em;
+  height: 30em;
   border-radius: 3.5px;
 }
 
@@ -55,6 +55,7 @@ header h1 {
   display: flex;
   justify-content: space-between;
   color: #CBC9CF;
+  margin-bottom: 4em;
 }
 
 .current-activity-page {
@@ -87,9 +88,8 @@ img {
 
 .my-form {
   height: 30%;
-  padding: 20px;
   background: #46424D;
-  padding: 5em 0em;
+  padding: 0em 0em;
 }
 
 .form-group {
