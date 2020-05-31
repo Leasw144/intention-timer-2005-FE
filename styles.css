@@ -57,6 +57,12 @@ header h1 {
   color: #CBC9CF;
 }
 
+.current-activity-page {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .choice-button {
   height: auto;
   width: 25%;
@@ -128,6 +134,16 @@ label {
   padding: 2.5em 0em;
 }
 
+
+.start-timer {
+  border-radius: 100%;
+  width:20em;
+  height:20em;
+  border-width:5px;
+  background: #46424D;
+  margin:auto;
+}
+
 .start-btn > button {
     height: 2.5em;
     width: 13em;
@@ -194,6 +210,8 @@ h4 {
 
 .meditate {
   color: #C278FD;
+  border-color:#C278FD;
+  
 }
 
 .exercise {

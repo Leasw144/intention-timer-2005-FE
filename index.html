@@ -33,24 +33,26 @@
         <form class="my-form">
           <div class="form-group">
             <label> What would you like to accomplish during this time? </label>
-            <input type="text" goal="goal">
+            <input type="text" class="goal">
           </div>
         <div class="second-line">
           <div class="form-group">
             <label> Minutes </label>
-            <input type="text" minutes="minutes">
+            <input type="text"  class="minutes">
           </div>
           <div class="form-group">
             <label> Seconds </label>
-            <input type="text" seconds="seconds">
+            <input type="text" class="seconds">
           </div>
         </div>
-          <span>
-            <button class="start-btn" type="button" value="submit">START ACTIVITY</button>
+          <span class="start-btn">
+            <button type="button" value="submit">START ACTIVITY</button>
           </span>
         </form>
       </div>
     </section>
+
+
     <section class="current-section-left text-main hidden">
         <h2 class="new-activity-title">Current Activity</h2>
         <div class="container">
@@ -65,16 +67,18 @@
           </div>
         </div>
       </section>
+
     <section class="section-right text-main">
       <h2 class="past-activities-title">Past Activities</h2>
-    <section class="category-cards">
-      <div class="logged-card">
-        <h3 class="category-card-title meditate">Meditate</h3>
-        <p class="logged-time"> 5 MINUTES 0 SECONDS </p>
-        <p class="logged-activity">Deep Breathing</p>
-      </div>
+      <section class="category-cards">
+        <div class="logged-card">
+          <h3 class="category-card-title meditate">Meditate</h3>
+          <p class="logged-time"> 5 MINUTES 0 SECONDS </p>
+          <p class="logged-activity">Deep Breathing</p>
+        </div>
+      </section>
     </section>
-    </section>
+
   </main>
   <script src="./activity.js"></script>
   <script src="./main.js"></script>
