@@ -27,8 +27,12 @@ startActivityButton.addEventListener('click', activateStartButton)
 
 function activateCategory(event) {
   console.log('OKAY', event.target)
-  if(event.target === studyButton) {
-    colorStudyBtn()
+  if(event.target.contains(studyButton)) {
+    colorStudyBtn();
+  } else if(event.target === meditateButton) {
+    colorMeditateBtn();
+  } else if(event.target === exerciseButton) {
+    colorExerciseBtn();
   }
 }
 
