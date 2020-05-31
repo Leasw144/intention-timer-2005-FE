@@ -28,7 +28,7 @@ function colorStudyBtn(event) {
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
   // hideHomePage();
-  createNewActivity();
+  // createNewActivity();
   renderCurrentActivity();
   console.log('this is working')
 }
@@ -60,26 +60,25 @@ var completedActivities
 function createNewActivity(){
   currentActivity = new Activity (
     'meditate',
-    'currentGoal.value',
-    'currentMinutes.value',
-    'currentSeconds.value',
+    `deep breathing`,
+    3,
+    00,
   )
   return currentActivity
 }
+
 function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
       <section class="current-section-left text-main">
-        <h2 class="new-activity-title">${currentActivity.category}</h2>
-        <div class="container">
+      <h2 class="new-activity-title">Current Activity</h2>
+      <div class="container">
           <div class="description">
           </div>
-          <div class = "timer">
-            <p> ${currentActivity.minutes} :  </p>
+          <div class="timer">
+            <p> ${currentActivity.minutes} : ${currentActivity.seconds}0</p>
           </div>
-          <div>
-            <p> ${currentActivity.seconds} </p>
-          </div>
+          
         </div>
       </section>`
 }
