@@ -10,16 +10,15 @@ class Activity {
   }
 
   startTimer(){
-    var timer = document.querySelector('.timer');
+    var timer = document.querySelector('#timer');
     var counter = 0
-    var timeleft = ((this.minutes) + (this.seconds * 60))
+    var timeLeft = ((this.minutes) + (this.seconds * 60))
     function timeIt(){
-      timer.html(timeleft - counter)
       counter++;
-      timer.html(timeleft - counter)
+      console.log(timeLeft-counter)
     }
     setInterval(timeIt, 1000);
-    return timer.html(timeleft -counter); 
+
   }
 
   markComplete(){
@@ -30,9 +29,9 @@ class Activity {
 
   }
 
-}
 
 // convert number of minutes into Seconds
 // set total number of seconds = to num var
 // create a for loop that calculates time per second,
 // for each second subtracted,
+}
