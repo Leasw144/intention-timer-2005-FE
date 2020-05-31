@@ -22,11 +22,23 @@ class Activity {
   }
 
   markComplete(){
-
+    if timer.innerHTML =< 0{
+      alert("Congratulations!")
+      this.completed = true;
+    }
   }
 
   saveToStorage(){
-
+    if (this.completed = true){
+    completedActivities.push(currentActivity);
+    for (let i = 0; i < completedActivities.length; i++){
+    completedActivities.[i].innerHTML = <div class="logged-card">
+      <h3 class="category-card-title meditate">Meditate</h3>
+      <p class="logged-time"> 5 MINUTES 0 SECONDS </p>
+      <p class="logged-activity">Deep Breathing</p>
+    </div>
+      }
+    }
   }
 
 

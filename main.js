@@ -80,7 +80,7 @@ function handleClick(event) {
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity
-var completedActivities
+var completedActivities = []; 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function createNewActivity() {
   currentActivity = new Activity (
