@@ -88,7 +88,6 @@ function createNewActivity() {
     currentSeconds.value,
   )
   console.log(currentActivity)
-  return currentActivity;
 }
 
 function renderCurrentActivity(){

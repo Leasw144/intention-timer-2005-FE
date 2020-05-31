@@ -12,13 +12,13 @@ class Activity {
   startTimer(){
     var timer = document.querySelector('#timer');
     var counter = 0
-    var timeLeft = ((this.minutes) + (this.seconds * 60))
+    var timeLeft = ((this.minutes) + (this.seconds))
     function timeIt(){
       counter++;
       console.log(timeLeft-counter)
+      timer.innerHTML = (timeLeft-counter)
     }
     setInterval(timeIt, 1000);
-
   }
 
   markComplete(){
