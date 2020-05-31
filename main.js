@@ -69,7 +69,7 @@ function createNewActivity(){
 function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
-      <section class="current-section-left text-main hidden">
+      <section class="current-section-left text-main">
         <h2 class="new-activity-title">${currentActivity.category}</h2>
         <div class="container">
           <div class="description">
