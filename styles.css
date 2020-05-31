@@ -142,6 +142,7 @@ label {
   border-width:5px;
   background: #46424D;
   margin:auto;
+  font-size: 12px; 
 }
 
 .start-btn > button {
@@ -211,7 +212,7 @@ h4 {
 .meditate {
   color: #C278FD;
   border-color:#C278FD;
-  
+
 }
 
 .exercise {

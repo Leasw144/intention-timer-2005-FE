@@ -3,6 +3,7 @@ var studyButton = document.querySelector('.study-btn')
 var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-btn')
+var startTimerButton = document.querySelector('.start-timer')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -20,7 +21,7 @@ exerciseButton.addEventListener('click', colorExerciseBtn);
 meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ITERATION 2 - BUTTON COLORS ON click Event
+// ITERATION 2 - BUTTON COLORS ON click Even
 
 function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
@@ -50,7 +51,7 @@ function colorMeditateBtn(event) {
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
   // hideHomePage();
-  // createNewActivity();
+  createNewActivity();
   renderCurrentActivity();
   console.log('this is working')
 }
@@ -86,7 +87,7 @@ function createNewActivity() {
     currentMinutes.value,
     currentSeconds.value,
   )
-  return currentActivity
+  console.log(currentActivity)
 }
 
 function renderCurrentActivity(){
@@ -97,8 +98,8 @@ function renderCurrentActivity(){
         <div class="container">
           <h2 class="description"> ${currentActivity.category}</h2>
           <h1>${currentActivity.description}
-          <div class="timer">
-            <p> ${currentActivity.minutes} : ${currentActivity.seconds}0</p>
+          <div class="timer-container">
+            <p id="timer"> ${currentActivity.minutes} min : ${currentActivity.seconds} secs</p>
           </div>
           <button type='button' class='start-timer text-main ${currentActivity.category}'>start</button>
         </div>
