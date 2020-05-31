@@ -4,6 +4,7 @@ var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-btn')
 var startTimerButton = document.querySelector('.start-timer')
+var categoryBoxes = document.querySelector('.category-boxes')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -16,6 +17,7 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+buttons
 studyButton.addEventListener('click', colorStudyBtn);
 exerciseButton.addEventListener('click', colorExerciseBtn);
 meditateButton.addEventListener('click', colorMeditateBtn);

@@ -51,7 +51,7 @@ header h1 {
   border-radius: 3.5px;
 }
 
-.buttons-box {
+.category-boxes {
   display: flex;
   justify-content: space-between;
   color: #CBC9CF;
@@ -271,7 +271,7 @@ h4 {
     border-radius: 3px;
   }
 
-  .buttons-box {
+  .category-boxes {
      display: flex;
      flex-direction: column;
      color: #CBC9CF;
