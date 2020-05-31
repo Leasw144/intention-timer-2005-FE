@@ -12,6 +12,7 @@ var completedActivityPage = document.querySelector('.completedActivity-page')
 var sectionLeft = document.querySelector('.section-left')
 var currentSectionLeft = document.querySelector('.current-section-left')
 var hidden = document.querySelector('.hidden')
+
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
@@ -22,12 +23,31 @@ categoryBoxes.addEventListener('click', activateCategory)
 // exerciseButton.addEventListener('click', colorExerciseBtn);
 // meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
+document.addEventListener('click', function (event) {
+  console.log(event.target)
+  if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
+
+    console.log(`study button has been pressed`)
+    colorStudyBtn();
+  } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
+    colorMeditateBtn();
+  } else if (event.target.matches('.exercise-btn') || event.target.matches('exercise-button') || event.target.matches('h4')) {
+
+    console.log(`study button has been pressed`)
+    colorExerciseBtn();
+  }
+}, false);
+
+
+
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
 
 function activateCategory(event) {
   console.log('OKAY', event.target)
-  if(event.target.contains(studyButton)) {
+  // var buttons = document.getElementById('img')
+  // var img = document.querySelector()
+  if(event.target === studyButton) {
     colorStudyBtn();
   } else if(event.target === meditateButton) {
     colorMeditateBtn();
