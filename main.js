@@ -16,6 +16,8 @@ var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 studyButton.addEventListener('click', colorStudyBtn);
+exerciseButton.addEventListener('click', colorExerciseBtn);
+meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Event
@@ -23,7 +25,27 @@ startActivityButton.addEventListener('click', activateStartButton)
 function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <h4 class="study">Study</h4>`;
+  meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
+  <h4 class="text-main">Meditate</h4>`;
+  exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
+  <h4 class="text-main">Exercise</h4>`;
   }
+function colorExerciseBtn(event) {
+  exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
+  <h4 class="exercise">Exercise</h4>`;
+  studyButton.innerHTML = `<img src="./assets/study.svg"/>
+  <h4 class="text-main">Study</h4>`;
+  meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
+  <h4 class="text-main">Meditate</h4>`;
+  }
+function colorMeditateBtn(event) {
+  meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
+  <h4 class="meditate">Meditate</h4>`;
+  studyButton.innerHTML = `<img src="./assets/study.svg"/>
+  <h4 class="text-main">Study</h4>`;
+  exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
+  <h4 class="text-main">Exercise</h4>`
+}
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
