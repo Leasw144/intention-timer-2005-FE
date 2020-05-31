@@ -51,7 +51,7 @@ header h1 {
   border-radius: 3.5px;
 }
 
-.buttons-box {
+.category-boxes {
   display: flex;
   justify-content: space-between;
   color: #CBC9CF;
@@ -207,6 +207,7 @@ h4 {
 
 .study {
   color:#B3FD78;
+  border-color:#B3FD78;
 }
 
 .meditate {
@@ -216,7 +217,8 @@ h4 {
 }
 
 .exercise {
-  color: #FD8078
+  color: #FD8078;
+  border-color: #FD8078;
 }
 
 .error {
@@ -269,7 +271,7 @@ h4 {
     border-radius: 3px;
   }
 
-  .buttons-box {
+  .category-boxes {
      display: flex;
      flex-direction: column;
      color: #CBC9CF;
@@ -298,4 +300,20 @@ h4 {
   .second-line > div {
     width: 7em;
   }
+
+  .study {
+  color:#B3FD78;
+  border-color:#B3FD78;
+}
+
+.meditate {
+  color: #C278FD;
+  border-color:#C278FD;
+
+}
+
+.exercise {
+  color: #FD8078;
+  border-color: #FD8078;
+}
 }

@@ -4,6 +4,7 @@ var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-btn')
 var startTimerButton = document.querySelector('.start-timer')
+var categoryBoxes = document.querySelector('.category-boxes')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -11,26 +12,64 @@ var completedActivityPage = document.querySelector('.completedActivity-page')
 var sectionLeft = document.querySelector('.section-left')
 var currentSectionLeft = document.querySelector('.current-section-left')
 var hidden = document.querySelector('.hidden')
+
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-studyButton.addEventListener('click', colorStudyBtn);
-exerciseButton.addEventListener('click', colorExerciseBtn);
-meditateButton.addEventListener('click', colorMeditateBtn);
+categoryBoxes.addEventListener('click', activateCategory)
+// studyButton.addEventListener('click', colorStudyBtn);
+// exerciseButton.addEventListener('click', colorExerciseBtn);
+// meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
+document.addEventListener('click', function (event) {
+  console.log(event.target)
+  if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
+
+    console.log(`study button has been pressed`)
+    colorStudyBtn();
+  } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
+    colorMeditateBtn();
+  } else if (event.target.matches('.exercise-btn') || event.target.matches('exercise-button') || event.target.matches('h4')) {
+
+    console.log(`study button has been pressed`)
+    colorExerciseBtn();
+  }
+}, false);
+
+
+
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
 
-function colorStudyBtn(event) {
+function activateCategory(event) {
+  console.log('OKAY', event.target)
+  // var buttons = document.getElementById('img')
+  // var img = document.querySelector()
+  if(event.target === studyButton) {
+    colorStudyBtn();
+  } else if(event.target === meditateButton) {
+    colorMeditateBtn();
+  } else if(event.target === exerciseButton) {
+    colorExerciseBtn();
+  }
+}
+
+
+
+function colorStudyBtn() {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <h4 class="study">Study</h4>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
   <h4 class="text-main">Meditate</h4>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
   <h4 class="text-main">Exercise</h4>`;
+  studyButton.classList.add('study')
+  meditateButton.classList.remove('meditate')
+  exerciseButton.classList.remove('exercise')
   }
+
 function colorExerciseBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
   <h4 class="exercise">Exercise</h4>`;
@@ -38,14 +77,21 @@ function colorExerciseBtn(event) {
   <h4 class="text-main">Study</h4>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
   <h4 class="text-main">Meditate</h4>`;
+  exerciseButton.classList.add('exercise')
+  meditateButton.classList.remove('meditate')
+  studyButton.classList.remove('study')
   }
+
 function colorMeditateBtn(event) {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
   <h4 class="meditate">Meditate</h4>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
   <h4 class="text-main">Study</h4>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
-  <h4 class="text-main">Exercise</h4>`
+  <h4 class="text-main">Exercise</h4>`;
+  meditateButton.classList.add('meditate')
+  studyButton.classList.remove('study')
+  exerciseButton.classList.remove('exercise')
 }
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
