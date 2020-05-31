@@ -17,16 +17,29 @@ class Activity {
       counter++;
       console.log(timeLeft-counter)
       timer.innerHTML = (timeLeft-counter)
+      if ((timeLeft-counter) <= 0) {
+        return ("Congratulations!")
+      }
     }
     setInterval(timeIt, 1000);
   }
 
   markComplete(){
-
-  }
+      alert("Congratulations!");
+      this.completed = true;
+    }
 
   saveToStorage(){
-
+    if (this.completed = true){
+    completedActivities.push(currentActivity);
+    for (let i = 0; i < completedActivities.length; i++){
+    completedActivities.innerHTML = `<div class="logged-card">
+      <h3 class="category-card-title ${this.category}"></h3>
+      <p class="logged-time"> ${this.minutes} min : ${this.seconds} sec </p>
+      <p class="logged-activity">${this.description}</p>
+    </div>`
+      }
+    }
   }
 
 
