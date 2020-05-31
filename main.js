@@ -30,7 +30,9 @@ function colorStudyBtn(event) {
   <h4 class="text-main">Meditate</h4>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
   <h4 class="text-main">Exercise</h4>`;
+  studyButton.classList.add('study')
   }
+
 function colorExerciseBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
   <h4 class="exercise">Exercise</h4>`;
@@ -39,6 +41,7 @@ function colorExerciseBtn(event) {
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
   <h4 class="text-main">Meditate</h4>`;
   }
+
 function colorMeditateBtn(event) {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
   <h4 class="meditate">Meditate</h4>`;

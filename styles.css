@@ -207,6 +207,7 @@ h4 {
 
 .study {
   color:#B3FD78;
+  border-color:#B3FD78;
 }
 
 .meditate {
@@ -216,7 +217,8 @@ h4 {
 }
 
 .exercise {
-  color: #FD8078
+  color: #FD8078;
+  border-color: #FD8078;
 }
 
 .error {
