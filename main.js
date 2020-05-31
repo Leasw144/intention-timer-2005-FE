@@ -70,7 +70,7 @@ function createNewActivity(){
 function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
-      <section class="text-main">
+      <section class="text-main current-activity-page">
       <h2 class="new-activity-title">Current Activity</h2>
       <div class="container">
           <h2 class="description"> ${currentActivity.category}
