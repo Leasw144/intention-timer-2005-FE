@@ -78,7 +78,7 @@ function renderCurrentActivity(){
           <div class="timer">
             <p> ${currentActivity.minutes} : ${currentActivity.seconds}0</p>
           </div>
-          <button type='button'>Start</button>
+          <button type='button' class='start-timer ${currentActivity.category}'>start</button>
         </div>
       </section>`
 }
