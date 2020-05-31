@@ -73,12 +73,12 @@ function renderCurrentActivity(){
       <section class="current-section-left text-main">
       <h2 class="new-activity-title">Current Activity</h2>
       <div class="container">
-          <div class="description"> ${currentActivity.category}
-          </div>
+          <h2 class="description"> ${currentActivity.category}
+          </h2>
           <div class="timer">
             <p> ${currentActivity.minutes} : ${currentActivity.seconds}0</p>
           </div>
-          
+          <button type='button'>Start</button>
         </div>
       </section>`
 }
