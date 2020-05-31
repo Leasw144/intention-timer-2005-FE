@@ -1,3 +1,4 @@
+
 class Activity {
   constructor(category, description, minutes, seconds) {
     this.category = category;
@@ -9,7 +10,16 @@ class Activity {
   }
 
   startTimer(){
-
+    var timer = document.querySelector('.timer');
+    var counter = 0
+    var timeleft = ((this.minutes) + (this.seconds * 60))
+    function timeIt(){
+      timer.html(timeleft - counter)
+      counter++;
+      timer.html(timeleft - counter)
+    }
+    setInterval(timeIt, 1000);
+    return timer.html(timeleft -counter); 
   }
 
   markComplete(){
