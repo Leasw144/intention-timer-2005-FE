@@ -27,7 +27,7 @@ function colorStudyBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-  hideHomePage();
+  // hideHomePage();
   createNewActivity();
   renderCurrentActivity();
   console.log('this is working')
@@ -60,9 +60,9 @@ var completedActivities
 function createNewActivity(){
   currentActivity = new Activity (
     'meditate',
-    currentGoal.value,
-    currentMinutes.value,
-    currentSeconds.value,
+    'currentGoal.value',
+    'currentMinutes.value',
+    'currentSeconds.value',
   )
   return currentActivity
 }
