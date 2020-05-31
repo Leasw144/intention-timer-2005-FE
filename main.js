@@ -57,11 +57,11 @@ function handleClick(event) {
 var currentActivity
 var completedActivities
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-function createNewActivity(){
+function createNewActivity() {
   currentActivity = new Activity (
     'meditate',
-    `deep breathing`,
-    3,
+    currentGoal.value,
+    currentMinutes.value,
     00,
   )
   return currentActivity
@@ -71,10 +71,10 @@ function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
       <section class="text-main current-activity-page">
-      <h2 class="new-activity-title">Current Activity</h2>
-      <div class="container">
-          <h2 class="description"> ${currentActivity.category}
-          </h2>
+        <h2 class="new-activity-title">Current Activity</h2>
+        <div class="container">
+          <h2 class="description"> ${currentActivity.category}</h2>
+          <h1>${currentActivity.description}
           <div class="timer">
             <p> ${currentActivity.minutes} : ${currentActivity.seconds}0</p>
           </div>
