@@ -40,6 +40,7 @@ function colorExerciseBtn(event) {
   <h4 class="text-main">Study</h4>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
   <h4 class="text-main">Meditate</h4>`;
+  exerciseButton.classList.add('exercise')
   }
 
 function colorMeditateBtn(event) {
@@ -48,7 +49,8 @@ function colorMeditateBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
   <h4 class="text-main">Study</h4>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
-  <h4 class="text-main">Exercise</h4>`
+  <h4 class="text-main">Exercise</h4>`;
+  meditateButton.classList.toggle('meditate')
 }
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
