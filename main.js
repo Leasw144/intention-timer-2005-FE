@@ -62,7 +62,7 @@ function createNewActivity() {
     'meditate',
     currentGoal.value,
     currentMinutes.value,
-    00,
+    currentSeconds.value,
   )
   return currentActivity
 }
