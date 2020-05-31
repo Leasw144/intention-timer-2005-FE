@@ -50,7 +50,6 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-  // hideHomePage();
   createNewActivity();
   renderCurrentActivity();
   console.log('this is working')
