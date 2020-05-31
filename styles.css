@@ -55,6 +55,7 @@ header h1 {
   display: flex;
   justify-content: space-between;
   color: #CBC9CF;
+  margin-bottom: 4em;
 }
 
 .current-activity-page {
@@ -88,7 +89,7 @@ img {
 .my-form {
   height: 30%;
   background: #46424D;
-  padding: 5em 0em;
+  padding: 0em 0em;
 }
 
 .form-group {
