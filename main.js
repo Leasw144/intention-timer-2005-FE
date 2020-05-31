@@ -70,7 +70,7 @@ function createNewActivity(){
 function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
-      <section class="current-section-left text-main">
+      <section class="text-main">
       <h2 class="new-activity-title">Current Activity</h2>
       <div class="container">
           <h2 class="description"> ${currentActivity.category}
@@ -78,7 +78,7 @@ function renderCurrentActivity(){
           <div class="timer">
             <p> ${currentActivity.minutes} : ${currentActivity.seconds}0</p>
           </div>
-          <button type='button' class='start-timer ${currentActivity.category}'>start</button>
+          <button type='button' class='start-timer text-main ${currentActivity.category}'>start</button>
         </div>
       </section>`
 }

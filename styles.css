@@ -128,6 +128,14 @@ label {
   padding: 2.5em 0em;
 }
 
+.start-timer {
+  border-radius: 100%;
+  width:20em;
+  height:20em;
+  border-width:5px;
+  background: #46424D;
+}
+
 .start-btn > button {
     height: 2.5em;
     width: 13em;
@@ -195,6 +203,7 @@ h4 {
 .meditate {
   color: #C278FD;
   border-color:#C278FD;
+  
 }
 
 .exercise {
