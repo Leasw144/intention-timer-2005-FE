@@ -5,6 +5,7 @@ var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-btn')
 var startTimerButton = document.querySelector('.start-timer')
 var categoryBoxes = document.querySelector('.category-boxes')
+var eachButton = document.querySelector('.choice-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -24,9 +25,7 @@ categoryBoxes.addEventListener('click', activateCategory)
 // meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 document.addEventListener('click', function (event) {
-  console.log(event.target)
   if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
-
     console.log(`study button has been pressed`)
     colorStudyBtn();
   } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
@@ -37,8 +36,6 @@ document.addEventListener('click', function (event) {
     colorExerciseBtn();
   }
 }, false);
-
-
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
@@ -96,14 +93,16 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-//  if (currentGoal !== null && currentMinutes !== null && currentSeconds !== null && (studyButton.innerHTML === `<img src="./assets/study-active.svg"/><h4 class="study">Study</h4>` || exerciseButton.innerHTML === `<img src="./assets/exercise-active.svg"/> <h4 class="exercise">Exercise</h4>` || meditateButton.innerHTML ===`<img src="./assets/meditate-active.svg"/> <h4 class="meditate">Meditate</h4>`)){
-  createNewActivity();
-  renderCurrentActivity();
-  console.log('this is working')
-//} else {
-  //alert ('You need to complete all four forms before continuing!')
+  createNewActivity()
+    if(
+    currentActivity.category == undefined && currentActivity.description == undefined &&
+    currentActivity.minutes == undefined && currentActivity.seconds == undefined){
+  alert ('You need to complete all four forms before continuing!')
+    } else {
+    renderCurrentActivity();
+    console.log('this is working')
+  }
 }
-
 /* this is for iteration 3
 function handleClick(event) {
   if (event.target.className === '.study-btn') {
@@ -135,7 +134,7 @@ function createNewActivity() {
     currentMinutes.value,
     currentSeconds.value,
   )
-  console.log(currentActivity)
+  return currentActivity
 }
 
 function renderCurrentActivity(){
@@ -144,12 +143,11 @@ function renderCurrentActivity(){
       <section class="text-main current-activity-page">
         <h2 class="new-activity-title">Current Activity</h2>
         <div class="container">
-          <h2 class="description"> ${currentActivity.category}</h2>
-          <h1>${currentActivity.description}
+          <h1 class="current-activity-description">${currentActivity.description}</h1>
           <div class="timer-container">
-            <p id="timer"> ${currentActivity.minutes} min : ${currentActivity.seconds} secs</p>
+            <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds}</p>
           </div>
-          <button type='button' class='start-timer text-main ${currentActivity.category}'>start</button>
+          <button type='button' class="start-timer text-main"${currentActivity.category}>start</button>
         </div>
       </section>`
 }
