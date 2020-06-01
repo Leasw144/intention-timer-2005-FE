@@ -111,6 +111,16 @@ label {
   font-size: 20px;
 }
 
+.my-form input[type="number"]{
+  padding: 8px;
+  width:100%;
+  background: #46424D;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #fff;
+  font-size: 20px;
+}
 
 .my-form input[type="submit"]{
   background-color: #333;
@@ -230,9 +240,28 @@ h4 {
 }
 /* This is for the Current Activity page */
 
-.timer {
+.current-activity-description {
+display: flex;
+justify-content: center;
+margin: 0;
+padding: 0;
+font-size: 150%;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+}
+
+#timer {
+  display: flex;
   justify-content: center;
   color: inherit;
+  font-size: 250%;
+}
+.start-timer {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 1100px) {
