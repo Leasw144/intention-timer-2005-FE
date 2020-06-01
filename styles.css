@@ -111,6 +111,17 @@ label {
   font-size: 20px;
 }
 
+.my-form input[type="number"]{
+  padding: 8px;
+  width:100%;
+  background: #46424D;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #fff;
+  font-size: 20px;
+}
+
 .my-form input[type="submit"]{
   background-color: #333;
   color: #fff;
@@ -142,7 +153,7 @@ label {
   border-width:5px;
   background: #46424D;
   margin:auto;
-  font-size: 12px; 
+  font-size: 12px;
 }
 
 .start-btn > button {
