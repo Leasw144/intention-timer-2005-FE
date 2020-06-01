@@ -118,16 +118,18 @@ function handleClick(event) {
     //displayPreviousPage();
   }
 */
-
+// use an id 
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity
 var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
-  var btnArray = document.querySelectorAll(".btn-check");
+  var btnArray = document.querySelectorAll(".choice-button");
+  console.log('checkActiveCategory', btnArray)
   for(var i = 0; i < btnArray.length; i++) {
-    if(btnArray[i].src.includes("active")) {
+    console.log(btnArray[i].innerHTML)
+    if(btnArray[i].innerHTML.includes("active")) {
       console.log('checkActiveCategory is working')
     }
   }
