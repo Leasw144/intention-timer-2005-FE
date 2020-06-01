@@ -184,7 +184,7 @@ label {
 .logged-card {
   height: 15%;
   width: 95%;
-  margin: 2% 0%;
+   margin: 2% 0%;
   border-radius: 3.5px;
   background: #46424D;
   border-right: 4px solid #C278FD;
@@ -256,9 +256,28 @@ h4 {
 }
 /* This is for the Current Activity page */
 
-.timer {
+.current-activity-description {
+display: flex;
+justify-content: center;
+margin: 0;
+padding: 0;
+font-size: 150%;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+}
+
+#timer {
+  display: flex;
   justify-content: center;
   color: inherit;
+  font-size: 250%;
+}
+.start-timer {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 1100px) {
