@@ -89,13 +89,12 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-  createNewActivity()
-    if(
-    currentActivity.category == undefined && currentActivity.description == undefined &&
-    currentActivity.minutes == undefined && currentActivity.seconds == undefined){
-  alert ('You need to complete all four forms before continuing!')
-    } else {
-    createNewActivity()
+  //   if(
+  //   currentActivity.category == undefined && currentActivity.description == undefined &&
+  //   currentActivity.minutes == undefined && currentActivity.seconds == undefined){
+  // alert ('You need to complete all four forms before continuing!')
+  //   } else {
+  //   createNewActivity()
     renderCurrentActivity();
     console.log('this is working')
   }
@@ -118,7 +117,7 @@ function handleClick(event) {
     //displayPreviousPage();
   }
 */
-// use an id 
+// use an id
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity
