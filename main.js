@@ -43,18 +43,18 @@ document.addEventListener('click', function (event) {
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
 
-function activateCategory(event) {
-  console.log('OKAY', event.target)
-  // var buttons = document.getElementById('img')
-  // var img = document.querySelector()
-  if(event.target === studyButton) {
-    colorStudyBtn();
-  } else if(event.target === meditateButton) {
-    colorMeditateBtn();
-  } else if(event.target === exerciseButton) {
-    colorExerciseBtn();
-  }
-}
+// function activateCategory(event) {
+//   console.log('OKAY', event.target)
+//   // var buttons = document.getElementById('img')
+//   // var img = document.querySelector()
+//   if(event.target === studyButton) {
+//     colorStudyBtn();
+//   } else if(event.target === meditateButton) {
+//     colorMeditateBtn();
+//   } else if(event.target === exerciseButton) {
+//     colorExerciseBtn();
+//   }
+// }
 
 function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
