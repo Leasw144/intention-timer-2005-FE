@@ -24,9 +24,7 @@ categoryBoxes.addEventListener('click', activateCategory)
 // meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 document.addEventListener('click', function (event) {
-  console.log(event.target)
   if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
-
     console.log(`study button has been pressed`)
     colorStudyBtn();
   } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
@@ -37,8 +35,6 @@ document.addEventListener('click', function (event) {
     colorExerciseBtn();
   }
 }, false);
-
-
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
