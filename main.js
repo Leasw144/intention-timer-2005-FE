@@ -39,19 +39,17 @@ document.addEventListener('click', function (event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
-
-// function activateCategory(event) {
-//   console.log('OKAY', event.target)
-//   // var buttons = document.getElementById('img')
-//   // var img = document.querySelector()
-//   if(event.target === studyButton) {
-//     colorStudyBtn();
-//   } else if(event.target === meditateButton) {
-//     colorMeditateBtn();
-//   } else if(event.target === exerciseButton) {
-//     colorExerciseBtn();
-//   }
-// }
+function activateCategory(event) {
+  if (event.target.closest('.study-btn')) {
+    console.log(`study button has been pressed`)
+    colorStudyBtn();
+  } else if (event.target.closest('.meditate-btn')) {
+    colorMeditateBtn();
+  } else if (event.target.closest('.exercise-btn')) {
+  console.log(`study button has been pressed`)
+  colorExerciseBtn();
+  }
+}
 
 function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
@@ -97,6 +95,7 @@ function activateStartButton(){
     currentActivity.minutes == undefined && currentActivity.seconds == undefined){
   alert ('You need to complete all four forms before continuing!')
     } else {
+    createNewActivity()
     renderCurrentActivity();
     console.log('this is working')
   }
@@ -125,9 +124,19 @@ function handleClick(event) {
 var currentActivity
 var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+function checkActiveCategory() {
+  var btnArray = document.querySelectorAll(".btn-check");
+  for(var i = 0; i < btnArray.length; i++) {
+    if(btnArray[i].src.includes("active")) {
+      console.log('checkActiveCategory is working')
+    }
+  }
+}
+
 function createNewActivity() {
   currentActivity = new Activity (
-    'meditate',
+    // 'meditate', if this btn or this btn or this btn has the active property
+    checkActiveCategory(),
     currentGoal.value,
     currentMinutes.value,
     currentSeconds.value,
