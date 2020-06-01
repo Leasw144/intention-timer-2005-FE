@@ -67,6 +67,7 @@ header h1 {
 .choice-button {
   height: auto;
   width: 25%;
+  padding-bottom: 12px;
   border-color: #CBC9CF;
   color: #CBC9CF;
   background-color: #46424D;
@@ -201,7 +202,7 @@ label {
 }
 
 .text-header {
-  color:#46424D
+  color:#46424D;
 }
 
 .card-shadow {
@@ -216,20 +217,35 @@ h4 {
   color: #FFF;
 }
 
+.category-boxes button span {
+  display: block;
+}
+
 .study {
   color:#B3FD78;
   border-color:#B3FD78;
 }
 
+.study:focus {
+  outline: none;
+}
+
 .meditate {
   color: #C278FD;
   border-color:#C278FD;
+}
 
+.meditate:focus {
+  outline: none;
 }
 
 .exercise {
   color: #FD8078;
   border-color: #FD8078;
+}
+
+.exercise:focus {
+  outline: none;
 }
 
 .error {
