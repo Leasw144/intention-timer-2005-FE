@@ -100,18 +100,7 @@ label {
   display: inline;
 }
 
-.my-form input[type="text"]{
-  padding: 8px;
-  width:100%;
-  background: #46424D;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  color: #fff;
-  font-size: 20px;
-}
-
-.my-form input[type="number"]{
+.my-form input[type="text"], input[type="number"]{
   padding: 8px;
   width:100%;
   background: #46424D;
