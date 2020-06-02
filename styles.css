@@ -190,20 +190,12 @@ label {
   color:#46424D;
 }
 
-.card-shadow {
-  color:#26222D
-}
-
-h4 {
-  margin-top:3.5px;
-}
-
 .text-card-head {
   color: #FFF;
 }
 
 .category-boxes button span {
-  display: block;
+   display: block;
 }
 
 .study {
@@ -236,9 +228,7 @@ h4 {
 .error {
   color: #EFB7EC
 }
-.hidden {
-  display: none;
-}
+
 /* This is for the Current Activity page */
 
 .current-activity-description {
@@ -277,6 +267,7 @@ font-size: 150%;
 }
 
 @media only screen and (max-width: 700px) {
+
   body {
     display: flex;
     flex-direction: column;
@@ -307,7 +298,7 @@ font-size: 150%;
      display: flex;
      flex-direction: column;
      color: #CBC9CF;
-   }
+  }
 
   .choice-button {
     display: flex;
@@ -336,16 +327,16 @@ font-size: 150%;
   .study {
   color:#B3FD78;
   border-color:#B3FD78;
-}
+ }
 
-.meditate {
+ .meditate {
   color: #C278FD;
   border-color:#C278FD;
+ }
 
-}
-
-.exercise {
+ .exercise {
   color: #FD8078;
   border-color: #FD8078;
-}
+ }
+
 }
