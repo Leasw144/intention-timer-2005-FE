@@ -27,7 +27,7 @@ exerciseButton.addEventListener('click', colorExerciseBtn);
 meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 document.addEventListener('click', function (event) {
-  if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
+  if (event.target.closest('.study-btn')) {
     console.log(`study button has been pressed`)
     colorStudyBtn();
   } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
@@ -109,28 +109,11 @@ function activateStartButton(){
     }
   }
 
-/* this is for iteration 3
-function handleClick(event) {
-  if (event.target.className === '.study-btn') {
-    displayCurrentActivityPage();
-    displayStudyActivityProperties();
-  };
-  if (event.target.className === '.meditate-btn'){
-    displayCurrentActivityPage();
-    displayMeditateActivityProperties();
-  };
-  if (event.target.className === '.exercise-btn'){
-    displayCurrentActivityPage();
-    displayExerciseActivityProperties();
-  }
-  //if (condition === true && event.target.id === 'go-back-button'){
-    //displayPreviousPage();
-  }
-*/
-// use an id
+
+
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
-var currentActivity
+
 // var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
