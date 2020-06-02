@@ -2,7 +2,7 @@
 var studyButton = document.querySelector('.study-btn')
 var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
-var startActivityButton = document.querySelector('.start-btn')
+var startActivityButton = document.querySelector('.start-activity-area')
 var startTimerButton = document.querySelector('.start-timer')
 var categoryBoxes = document.querySelector('.category-boxes')
 var eachButton = document.querySelector('.choice-button')
@@ -19,13 +19,12 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-categoryBoxes.addEventListener('click', activateCategory)
-// studyButton.addEventListener('click', colorStudyBtn);
-// exerciseButton.addEventListener('click', colorExerciseBtn);
-// meditateButton.addEventListener('click', colorMeditateBtn);
-currentMinutes.addEventListener('onKeyDown', checkInput)
-currentSeconds.addEventListener('onKeyDown', checkInput)
-
+categoryBoxes.addEventListener('click', activateCategory);
+currentMinutes.addEventListener('onKeyDown', checkInput);
+currentSeconds.addEventListener('onKeyDown', checkInput);
+studyButton.addEventListener('click', colorStudyBtn);
+exerciseButton.addEventListener('click', colorExerciseBtn);
+meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 document.addEventListener('click', function (event) {
   if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
@@ -42,33 +41,32 @@ document.addEventListener('click', function (event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
-
 function activateCategory(event) {
-  console.log('OKAY', event.target)
-  // var buttons = document.getElementById('img')
-  // var img = document.querySelector()
-  if(event.target === studyButton) {
+  if (event.target.closest('.study-btn')) {
+    console.log(`study button has been pressed`)
     colorStudyBtn();
-  } else if(event.target === meditateButton) {
+  } else if (event.target.closest('.meditate-btn')) {
     colorMeditateBtn();
-  } else if(event.target === exerciseButton) {
-    colorExerciseBtn();
+  } else if (event.target.closest('.exercise-btn')) {
+  console.log(`study button has been pressed`)
+  colorExerciseBtn();
   }
 }
 
+
 function checkInput(event){
-if (event.which !== 8 && event.which !== 0 && event.which <48 || event.which > 57)
+if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57)
 {
 event.preventDefault()
 }
 
-function colorStudyBtn() {
+function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
-  <h4 class="study">Study</h4>`;
+  <span class="study">Study</span>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
-  <h4 class="text-main">Meditate</h4>`;
+  <span class="text-main-color">Meditate</span>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
-  <h4 class="text-main">Exercise</h4>`;
+  <span class="text-main-color">Exercise</span>`;
   studyButton.classList.add('study')
   meditateButton.classList.remove('meditate')
   exerciseButton.classList.remove('exercise')
@@ -76,11 +74,11 @@ function colorStudyBtn() {
 
 function colorExerciseBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
-  <h4 class="exercise">Exercise</h4>`;
+  <span class="exercise">Exercise</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
-  <h4 class="text-main">Study</h4>`;
+  <span class="text-main-color">Study</span>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
-  <h4 class="text-main">Meditate</h4>`;
+  <span class="text-main-color">Meditate</span>`;
   exerciseButton.classList.add('exercise')
   meditateButton.classList.remove('meditate')
   studyButton.classList.remove('study')
@@ -88,11 +86,11 @@ function colorExerciseBtn(event) {
 
 function colorMeditateBtn(event) {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
-  <h4 class="meditate">Meditate</h4>`;
+  <span class="meditate">Meditate</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
-  <h4 class="text-main">Study</h4>`;
+  <span class="text-main-color">Study</span>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
-  <h4 class="text-main">Exercise</h4>`;
+  <span class="text-main-color">Exercise</span>`;
   meditateButton.classList.add('meditate')
   studyButton.classList.remove('study')
   exerciseButton.classList.remove('exercise')
@@ -100,16 +98,16 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-  createNewActivity()
-    if(
-    currentActivity.category == undefined && currentActivity.description == undefined &&
-    currentActivity.minutes == undefined && currentActivity.seconds == undefined){
-  alert ('You need to complete all four forms before continuing!')
-    } else {
+  //   if(
+  //   currentActivity.category == undefined && currentActivity.description == undefined &&
+  //   currentActivity.minutes == undefined && currentActivity.seconds == undefined){
+  // alert ('You need to complete all four forms before continuing!')
+  //   } else {
+  //   createNewActivity()
     renderCurrentActivity();
     console.log('this is working')
   }
-}
+
 /* this is for iteration 3
 function handleClick(event) {
   if (event.target.className === '.study-btn') {
@@ -128,15 +126,26 @@ function handleClick(event) {
     //displayPreviousPage();
   }
 */
-
+// use an id
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
 var currentActivity
 var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+function checkActiveCategory() {
+  var btnArray = document.querySelectorAll(".choice-button");
+  for(var i = 0; i < btnArray.length; i++) {
+    console.log(btnArray[i].innerHTML)
+    if(btnArray[i].innerHTML.includes("active")) {
+      console.log('checkActiveCategory is working')
+    }
+  }
+}
+
 function createNewActivity() {
   currentActivity = new Activity (
-    'meditate',
+    // 'meditate', if this btn or this btn or this btn has the active property
+    checkActiveCategory(),
     currentGoal.value,
     currentMinutes.value,
     currentSeconds.value,
@@ -147,14 +156,14 @@ function createNewActivity() {
 function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
-      <section class="text-main current-activity-page">
+      <section class="text-main-color current-activity-page">
         <h2 class="new-activity-title">Current Activity</h2>
         <div class="container">
           <h1 class="current-activity-description">${currentActivity.description}</h1>
           <div class="timer-container">
             <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds}</p>
           </div>
-          <button type='button' class="start-timer text-main"${currentActivity.category}>start</button>
+          <button type='button' class="start-timer text-main-color"${currentActivity.category}>start</button>
         </div>
       </section>`
 }
