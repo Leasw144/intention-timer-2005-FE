@@ -98,7 +98,7 @@ function activateStartButton(){
     renderCurrentActivity();
     console.log('this is working')
   }
-}
+
 /* this is for iteration 3
 function handleClick(event) {
   if (event.target.className === '.study-btn') {
@@ -125,7 +125,6 @@ var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
   var btnArray = document.querySelectorAll(".choice-button");
-  console.log('checkActiveCategory', btnArray)
   for(var i = 0; i < btnArray.length; i++) {
     console.log(btnArray[i].innerHTML)
     if(btnArray[i].innerHTML.includes("active")) {
