@@ -55,9 +55,9 @@ function colorStudyBtn(event) {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <span class="study">Study</span>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
-  <span class="text-main">Meditate</span>`;
+  <span class="text-main-color">Meditate</span>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
-  <span class="text-main">Exercise</span>`;
+  <span class="text-main-color">Exercise</span>`;
   studyButton.classList.add('study')
   meditateButton.classList.remove('meditate')
   exerciseButton.classList.remove('exercise')
@@ -67,9 +67,9 @@ function colorExerciseBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
   <span class="exercise">Exercise</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
-  <span class="text-main">Study</span>`;
+  <span class="text-main-color">Study</span>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
-  <span class="text-main">Meditate</span>`;
+  <span class="text-main-color">Meditate</span>`;
   exerciseButton.classList.add('exercise')
   meditateButton.classList.remove('meditate')
   studyButton.classList.remove('study')
@@ -79,9 +79,9 @@ function colorMeditateBtn(event) {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
   <span class="meditate">Meditate</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
-  <span class="text-main">Study</span>`;
+  <span class="text-main-color">Study</span>`;
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
-  <span class="text-main">Exercise</span>`;
+  <span class="text-main-color">Exercise</span>`;
   meditateButton.classList.add('meditate')
   studyButton.classList.remove('study')
   exerciseButton.classList.remove('exercise')
@@ -147,14 +147,14 @@ function createNewActivity() {
 function renderCurrentActivity(){
   createNewActivity();
     sectionLeft.innerHTML =  `
-      <section class="text-main current-activity-page">
+      <section class="text-main-color current-activity-page">
         <h2 class="new-activity-title">Current Activity</h2>
         <div class="container">
           <h1 class="current-activity-description">${currentActivity.description}</h1>
           <div class="timer-container">
             <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds}</p>
           </div>
-          <button type='button' class="start-timer text-main"${currentActivity.category}>start</button>
+          <button type='button' class="start-timer text-main-color"${currentActivity.category}>start</button>
         </div>
       </section>`
 }
