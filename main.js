@@ -23,6 +23,9 @@ categoryBoxes.addEventListener('click', activateCategory)
 // studyButton.addEventListener('click', colorStudyBtn);
 // exerciseButton.addEventListener('click', colorExerciseBtn);
 // meditateButton.addEventListener('click', colorMeditateBtn);
+currentMinutes.addEventListener('onKeyDown', checkInput)
+currentSeconds.addEventListener('onKeyDown', checkInput)
+
 startActivityButton.addEventListener('click', activateStartButton)
 document.addEventListener('click', function (event) {
   if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
@@ -53,7 +56,11 @@ function activateCategory(event) {
   }
 }
 
-
+function checkInput(event){
+if (event.which !== 8 && event.which !== 0 && event.which <48 || event.which > 57)
+{
+event.preventDefault()
+}
 
 function colorStudyBtn() {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
