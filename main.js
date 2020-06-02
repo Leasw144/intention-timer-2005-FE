@@ -27,7 +27,7 @@ exerciseButton.addEventListener('click', colorExerciseBtn);
 meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
 document.addEventListener('click', function (event) {
-  if (event.target.matches('.study-btn') || event.target.matches('study-button') || event.target.matches('h4')) {
+  if (event.target.closest('.study-btn')) {
     console.log(`study button has been pressed`)
     colorStudyBtn();
   } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
@@ -55,9 +55,9 @@ function activateCategory(event) {
 
 
 function checkInput(event){
-if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57)
-{
-event.preventDefault()
+  if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
+    event.preventDefault()
+  }
 }
 
 function colorStudyBtn(event) {
@@ -98,39 +98,23 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-  //   if(
-  //   currentActivity.category == undefined && currentActivity.description == undefined &&
-  //   currentActivity.minutes == undefined && currentActivity.seconds == undefined){
-  // alert ('You need to complete all four forms before continuing!')
-  //   } else {
-  //   createNewActivity()
-    renderCurrentActivity();
-    console.log('this is working')
+  var checkBox = checkActiveCategory();
+  if(currentGoal === '' ||
+    currentMinutes === '' || currentSeconds === '' || checkBox === false) {
+    alert ('You need to complete all four forms before continuing!')
+    } else {
+      createNewActivity()
+      renderCurrentActivity();
+      console.log('this is working')
+    }
   }
 
-/* this is for iteration 3
-function handleClick(event) {
-  if (event.target.className === '.study-btn') {
-    displayCurrentActivityPage();
-    displayStudyActivityProperties();
-  };
-  if (event.target.className === '.meditate-btn'){
-    displayCurrentActivityPage();
-    displayMeditateActivityProperties();
-  };
-  if (event.target.className === '.exercise-btn'){
-    displayCurrentActivityPage();
-    displayExerciseActivityProperties();
-  }
-  //if (condition === true && event.target.id === 'go-back-button'){
-    //displayPreviousPage();
-  }
-*/
-// use an id
+
+
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
-var currentActivity
-var completedActivities = [];
+
+// var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
   var btnArray = document.querySelectorAll(".choice-button");
@@ -138,8 +122,10 @@ function checkActiveCategory() {
     console.log(btnArray[i].innerHTML)
     if(btnArray[i].innerHTML.includes("active")) {
       console.log('checkActiveCategory is working')
+      return true
     }
   }
+  return false
 }
 
 function createNewActivity() {
@@ -167,13 +153,14 @@ function renderCurrentActivity(){
         </div>
       </section>`
 }
+
 /* handling input from forms in ROMCOM, could be useful for Activity function
 function displayMyCover() {
   coverImage.src = userCoverInput.value
   return coverImage.src;
 */
 //~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
-function hideHomePage(){
-  sectionLeft.classList.add('hidden')
-  currentSectionLeft.classList.remove('hidden')
-}
+// function hideHomePage(){
+//   sectionLeft.classList.add('hidden')
+//   currentSectionLeft.classList.remove('hidden')
+// }
