@@ -19,7 +19,9 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// categoryBoxes.addEventListener('click', activateCategory)
+categoryBoxes.addEventListener('click', activateCategory);
+currentMinutes.addEventListener('onKeyDown', checkInput);
+currentSeconds.addEventListener('onKeyDown', checkInput);
 studyButton.addEventListener('click', colorStudyBtn);
 exerciseButton.addEventListener('click', colorExerciseBtn);
 meditateButton.addEventListener('click', colorMeditateBtn);
@@ -49,6 +51,13 @@ function activateCategory(event) {
   console.log(`study button has been pressed`)
   colorExerciseBtn();
   }
+}
+
+
+function checkInput(event){
+if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57)
+{
+event.preventDefault()
 }
 
 function colorStudyBtn(event) {

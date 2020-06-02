@@ -1,4 +1,4 @@
-<html>
+a<html>
 
 <head>
   <meta charset="UTF-8">
@@ -42,13 +42,11 @@
         <div class="second-line">
           <div class="form-group">
             <label> Minutes </label>
-            <input type="number" class="minutes" max="59" onkeydown="javascript: return event.keyCode === 8 ||
-              event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+            <input type="number" class="minutes" max="59" onkeydown="return event.keyCode !==69">
           </div>
           <div class="form-group">
             <label> Seconds </label>
-            <input type="number" class="seconds" max="59" onkeydown="javascript: return event.keyCode === 8 ||
-              event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+            <input type="number" class="seconds" max="59" onkeydown="return event.keyCode !== 69">
           </div>
         </div>
           <span class="start-activity-area">
