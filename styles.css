@@ -128,12 +128,11 @@ label {
   width: 16em;
 }
 
-.start-btn {
+.start-activity-area {
   display: flex;
   justify-content: flex-end;
   padding: 2.5em 0em;
 }
-
 
 .start-timer {
   border-radius: 100%;
@@ -141,11 +140,11 @@ label {
   height:20em;
   border-width:5px;
   background: #46424D;
-  margin:auto;
+  margin: auto;
   font-size: 12px;
 }
 
-.start-btn > button {
+.start-activity-area > button {
     height: 2.5em;
     width: 13em;
     background: #FFF;
@@ -172,7 +171,7 @@ label {
 .logged-card {
   height: 15%;
   width: 95%;
-   margin: 2% 0%;
+  margin: 2% 0%;
   border-radius: 3.5px;
   background: #46424D;
   border-right: 4px solid #C278FD;
@@ -182,8 +181,6 @@ label {
   margin: 0;
   padding: 1% 2%;
 }
-
-/* //This is just a reference */
 
 .text-main  {
  color: #CBC9CF;
@@ -274,7 +271,7 @@ font-size: 150%;
     width: 11em;
   }
 
-    .start-btn {
+    .start-activity-area {
     justify-content: center;
   }
 }
@@ -328,7 +325,7 @@ font-size: 150%;
     width: 97%;
   }
 
-  .start-btn {
+  .start-activity-area {
     justify-content: center;
   }
 
