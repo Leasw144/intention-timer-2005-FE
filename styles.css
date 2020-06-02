@@ -11,7 +11,7 @@ header {
   background: #46424D;
   margin: 0;
   position: relative;
-  font-weight: lighter !important;
+  font-weight: lighter;
   font-size: 15px;
   letter-spacing: .1em;
 }
@@ -90,7 +90,6 @@ img {
 .my-form {
   height: 30%;
   background: #46424D;
-  padding: 0em 0em;
 }
 
 .form-group {
