@@ -12,26 +12,26 @@
     <h1>INTENTION TIMER</h1>
   </header>
   <main class="main-page">
-    <section class="section-left text-main">
+    <section class="section-left text-main-color">
       <h2 class="new-activity-title">New Activity</h2>
       <div class="container">
         <form class="my-form">
           <h3>Select a category</h3>
           <div class="category-boxes">
 
-            <button src="./assets/study.svg" type='button' class="study-btn choice-button active">
-              <img class='study-btn' src="./assets/study.svg"/>
-              <h4>Study</h4>
+            <button type="button" class="study-btn choice-button">
+              <img class="study-btn btn-check" src="./assets/study.svg"/>
+              <span>Study</span>
             </button>
 
-            <button type='button' class="meditate-btn choice-button">
-              <img src="./assets/meditate.svg" />
-              <h4>Meditate</h4>
+            <button type="button" class="meditate-btn choice-button">
+              <img class="meditate-btn btn-check" src="./assets/meditate.svg" />
+              <span>Meditate</span>
             </button>
 
-            <button type='button' class="exercise-btn choice-button">
-              <img src="./assets/exercise.svg" />
-              <h4>Exercise</h4>
+            <button type="button" class="exercise-btn choice-button">
+              <img class="exercise-btn btn-check" src="./assets/exercise.svg" />
+              <span>Exercise</span>
             </button>
 
           </div>
@@ -51,7 +51,7 @@
               event.keyCode === 46 ? true : !isNaN(Number(event.key))">
           </div>
         </div>
-          <span class="start-btn">
+          <span class="start-activity-area">
             <button type="button" value="submit">START ACTIVITY</button>
           </span>
         </form>
@@ -59,7 +59,7 @@
     </section>
 
 
-    <section class="current-section-left text-main hidden">
+    <section class="current-section-left text-main-color hidden">
         <h2 class="new-activity-title">Current Activity</h2>
         <div class="current-activity-container">
           <div class="description">
@@ -74,7 +74,7 @@
         </div>
       </section>
 
-    <section class="section-right text-main">
+    <section class="section-right text-main-color">
       <h2 class="past-activities-title">Past Activities</h2>
       <section class="category-cards">
         <div class="logged-card">

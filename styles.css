@@ -11,7 +11,7 @@ header {
   background: #46424D;
   margin: 0;
   position: relative;
-  font-weight: lighter !important;
+  font-weight: lighter;
   font-size: 15px;
   letter-spacing: .1em;
 }
@@ -67,6 +67,7 @@ header h1 {
 .choice-button {
   height: auto;
   width: 25%;
+  padding-bottom: 12px;
   border-color: #CBC9CF;
   color: #CBC9CF;
   background-color: #46424D;
@@ -89,7 +90,6 @@ img {
 .my-form {
   height: 30%;
   background: #46424D;
-  padding: 0em 0em;
 }
 
 .form-group {
@@ -100,18 +100,7 @@ label {
   display: inline;
 }
 
-.my-form input[type="text"]{
-  padding: 8px;
-  width:100%;
-  background: #46424D;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  color: #fff;
-  font-size: 20px;
-}
-
-.my-form input[type="number"]{
+.my-form input[type="text"], input[type="number"]{
   padding: 8px;
   width:100%;
   background: #46424D;
@@ -139,12 +128,11 @@ label {
   width: 16em;
 }
 
-.start-btn {
+.start-activity-area {
   display: flex;
   justify-content: flex-end;
   padding: 2.5em 0em;
 }
-
 
 .start-timer {
   border-radius: 100%;
@@ -152,11 +140,11 @@ label {
   height:20em;
   border-width:5px;
   background: #46424D;
-  margin:auto;
+  margin: auto;
   font-size: 12px;
 }
 
-.start-btn > button {
+.start-activity-area > button {
     height: 2.5em;
     width: 13em;
     background: #FFF;
@@ -183,7 +171,7 @@ label {
 .logged-card {
   height: 15%;
   width: 95%;
-   margin: 2% 0%;
+  margin: 2% 0%;
   border-radius: 3.5px;
   background: #46424D;
   border-right: 4px solid #C278FD;
@@ -194,26 +182,20 @@ label {
   padding: 1% 2%;
 }
 
-/* //This is just a reference */
-
-.text-main  {
+.text-main-color {
  color: #CBC9CF;
 }
 
 .text-header {
-  color:#46424D
-}
-
-.card-shadow {
-  color:#26222D
-}
-
-h4 {
-  margin-top:3.5px;
+  color:#46424D;
 }
 
 .text-card-head {
   color: #FFF;
+}
+
+.category-boxes button span {
+   display: block;
 }
 
 .study {
@@ -221,10 +203,17 @@ h4 {
   border-color:#B3FD78;
 }
 
+.study:focus {
+  outline: none;
+}
+
 .meditate {
   color: #C278FD;
   border-color:#C278FD;
+}
 
+.meditate:focus {
+  outline: none;
 }
 
 .exercise {
@@ -232,12 +221,14 @@ h4 {
   border-color: #FD8078;
 }
 
+.exercise:focus {
+  outline: none;
+}
+
 .error {
   color: #EFB7EC
 }
-.hidden {
-  display: none;
-}
+
 /* This is for the Current Activity page */
 
 .current-activity-description {
@@ -259,6 +250,7 @@ font-size: 150%;
   color: inherit;
   font-size: 250%;
 }
+
 .start-timer {
   display: flex;
   justify-content: center;
@@ -269,12 +261,13 @@ font-size: 150%;
     width: 11em;
   }
 
-    .start-btn {
+    .start-activity-area {
     justify-content: center;
   }
 }
 
 @media only screen and (max-width: 700px) {
+
   body {
     display: flex;
     flex-direction: column;
@@ -305,7 +298,7 @@ font-size: 150%;
      display: flex;
      flex-direction: column;
      color: #CBC9CF;
-   }
+  }
 
   .choice-button {
     display: flex;
@@ -323,7 +316,7 @@ font-size: 150%;
     width: 97%;
   }
 
-  .start-btn {
+  .start-activity-area {
     justify-content: center;
   }
 
@@ -334,16 +327,16 @@ font-size: 150%;
   .study {
   color:#B3FD78;
   border-color:#B3FD78;
-}
+ }
 
-.meditate {
+ .meditate {
   color: #C278FD;
   border-color:#C278FD;
+ }
 
-}
-
-.exercise {
+ .exercise {
   color: #FD8078;
   border-color: #FD8078;
-}
+ }
+
 }
