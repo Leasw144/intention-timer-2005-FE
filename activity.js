@@ -37,7 +37,10 @@ class Activity {
         </div>
       <div>
         <button type='button' class="start-timer text-main-color ${currentActivity.category}">COMPLETED!!</button>
-      </div>`
+      </div>
+      <div class="logActivityContainer">
+        <button type='button' class='LogActivityButton' text-main-color> Log Activity </button>
+      <div>`
   }
 
   saveToStorage(){
