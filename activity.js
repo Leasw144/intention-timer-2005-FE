@@ -18,7 +18,7 @@ class Activity {
       if(currentActivity.seconds < 0) {
         currentActivity.seconds = 59
         currentActivity.minutes--
-      } else if(this.minutes < 0 || currentActivity.minutes < 0) {
+      } else if(currentActivity.minutes < 0) {
         console.log(`!!!`)
         clearInterval(timeLeft)
         currentActivity.markComplete()
@@ -29,8 +29,9 @@ class Activity {
   }
 
   markComplete(){
-      alert("Congratulations!");
-      this.completed = true;
+    alert("Congratulations!");
+    this.completed = true;
+    timer.innerHTML = `0:00`
     }
 
   saveToStorage(){

@@ -138,7 +138,7 @@ function checkActiveCategory() {
 function createNewActivity() {
   currentActivity = new Activity (
     // 'meditate', if this btn or this btn or this btn has the active property
-    checkActiveCategory(),
+    `meditate`,
     currentGoal.value,
     currentMinutes.value,
     currentSeconds.value,
@@ -156,7 +156,7 @@ function renderCurrentActivity(){
           <div class="timer-container">
             <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds}</p>
           </div>
-          <button type='button' class="start-timer text-main-color"${currentActivity.category}>start</button>
+          <button type='button' class="start-timer text-main-color ${currentActivity.category}">start</button>
         </div>
       </section>`
 }
