@@ -177,7 +177,7 @@ label {
 .new-activity-container {
   display: flex;
   justify-content: center;
-  height: 50%; 
+  height: 50%;
 }
 .new-activity-button {
   display: flex;
@@ -203,13 +203,13 @@ label {
   flex-direction: column;
 }
 
-.category-cards !important {
+.category-cards {
   height: 15%;
   width: 95%;
   margin: 2% 0%;
   border-radius: 3.5px;
   background: #46424D;
-  border-right: 4px solid #C278FD;
+  border-right: 4px solid #B3FD78;
 }
 
 .logged-card > h3, p {
@@ -239,7 +239,7 @@ label {
   margin: 2% 0%;
   border-radius: 3.5px;
   background: #46424D;
-  border-right: 4px solid #C278FD;
+  border-right: 4px solid ##B3FD78;
 }
 
 .study {

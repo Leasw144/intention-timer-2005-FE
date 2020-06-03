@@ -11,6 +11,8 @@ class Activity {
 
   startTimer(){
     var timer = document.querySelector('#timer');
+    var loggedMinutes = currentActivity.minutes;
+    var loggedSeconds = currentActivity.seconds;
     timer.setAttribute('disabled', false)
     var timeLeft = setInterval(function() {
       timer.innerHTML = `${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}`
@@ -50,7 +52,7 @@ class Activity {
     for (let i = 0; i < completedActivities.length; i++){
     completedActivities.innerHTML = `<div class="logged-card">
       <h3 class="category-card-title ${this.category}"></h3>
-      <p class="logged-time"> ${this.minutes} min : ${this.seconds} sec </p>
+      <p class="logged-time"> ${this.minutes min : ${this.seconds} sec </p>
       <p class="logged-activity">${this.description}</p>
     </div>`
       }
