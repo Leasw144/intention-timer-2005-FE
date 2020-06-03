@@ -11,22 +11,27 @@ class Activity {
 
   startTimer(){
     var timer = document.querySelector('#timer');
-    var counter = 0
-    var timeLeft = ((this.minutes) + (this.seconds))
-    function timeIt(){
-      counter++;
-      console.log(timeLeft-counter)
-      timer.innerHTML = (timeLeft-counter)
-      if ((timeLeft-counter) <= 0) {
-        return ("Congratulations!")
+    timer.setAttribute('disabled', false)
+    var timeLeft = setInterval(function() {
+      timer.innerHTML = `${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}`
+      currentActivity.seconds--
+      if(currentActivity.seconds < 0) {
+        currentActivity.seconds = 59
+        currentActivity.minutes--
+      } else if(currentActivity.minutes < 0) {
+        console.log(`!!!`)
+        clearInterval(timeLeft)
+        currentActivity.markComplete()
       }
-    }
-    setInterval(timeIt, 1000);
+      
+    }, 1000) 
+  console.log(`than umm uh I guess we completely stop the clock`)
   }
 
   markComplete(){
-      alert("Congratulations!");
-      this.completed = true;
+    alert("Congratulations!");
+    this.completed = true;
+    timer.innerHTML = `0:00`
     }
 
   saveToStorage(){
