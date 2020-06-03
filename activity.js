@@ -13,14 +13,12 @@ class Activity {
     var timer = document.querySelector('#timer');
     timer.setAttribute('disabled', false)
     var timeLeft = setInterval(function() {
-      timer.innerHTML = `${currentActivity.minutes} :${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}`
+      timer.innerHTML = `${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}`
       currentActivity.seconds--
       if(currentActivity.seconds < 0) {
         currentActivity.seconds = 59
         currentActivity.minutes--
-      }
-      debugger 
-      if(this.seconds < 0) {
+      } else if(this.minutes < 0 || currentActivity.minutes < 0) {
         console.log(`!!!`)
         clearInterval(timeLeft)
         currentActivity.markComplete()
