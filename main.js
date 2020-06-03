@@ -47,14 +47,14 @@ function checkInput(event){
 
 function logActivity() {
   sectionRight.innerHTML =`
-  <section class='section-right'>
   <h2 class="past-activities-title"> Completed Activities</h2>
     <div class="category-cards">
-    <div class="logged-card">
-      <h3 class="category-card-title ${currentActivity.category}"</h3>
-        <p class="logged-time"> ${currentActivity.minutes} : ${currentActivity.seconds}</p>
-        <p class="logged-activity">${currentActivity.description}</p>
+      <div class="logged-card">
+        <h3 class="category-card-title"</h3>
+          <p class="logged-time"> ${currentActivity.minutes} : ${currentActivity.seconds}</p>
+          <p class="logged-activity">${currentActivity.description}</p>
       </div>
+    </div>
   </section>`
 }
 
