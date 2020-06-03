@@ -6,7 +6,7 @@ var startActivityButton = document.querySelector('.start-activity-area')
 var startTimerButton = document.querySelector('.start-timer')
 var categoryBoxes = document.querySelector('.category-boxes')
 var eachButton = document.querySelector('.choice-button')
-var logActivityButton = document.querySelector('.logACtivityButton')
+var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -24,11 +24,7 @@ sectionLeft.addEventListener('click', startCircleButton)
 categoryBoxes.addEventListener('click', activateCategory);
 currentMinutes.addEventListener('onKeyDown', checkInput);
 currentSeconds.addEventListener('onKeyDown', checkInput);
-studyButton.addEventListener('click', colorStudyBtn);
-exerciseButton.addEventListener('click', colorExerciseBtn);
-meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
-
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
 function activateCategory(event) {
@@ -48,9 +44,11 @@ function startCircleButton() {
     currentActivity.startTimer()
   }
 }
+//~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
 
 //function logActivityButton() {
-//  if(event.target.closest('.logActivityButton')) {
+//if(event.target.closest('.log-activity-button')) {
+//console.log('the log activity button is working')
 //}
 
 function checkInput(event){
@@ -70,7 +68,6 @@ function colorStudyBtn(event) {
   studyButton.classList.add('active')
   meditateButton.classList.remove('meditate')
   exerciseButton.classList.remove('exercise')
-
 }
 
 function colorExerciseBtn(event) {
