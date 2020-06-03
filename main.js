@@ -2,10 +2,8 @@
 var studyButton = document.querySelector('.study-btn')
 var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
-var startActivityButton = document.querySelector('.start-activity-area')
-var startTimerButton = document.querySelector('.start-timer')
-var categoryBoxes = document.querySelector('.category-boxes')
-var eachButton = document.querySelector('.choice-button')
+var startCircleButton = document.querySelector('.start-circle-timer')
+var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -19,17 +17,9 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sectionLeft.addEventListener('click', startCircleButton)
-categoryBoxes.addEventListener('click', activateCategory);
-currentMinutes.addEventListener('onKeyDown', checkInput);
-currentSeconds.addEventListener('onKeyDown', checkInput);
-studyButton.addEventListener('click', colorStudyBtn);
-exerciseButton.addEventListener('click', colorExerciseBtn);
-meditateButton.addEventListener('click', colorMeditateBtn);
-startActivityButton.addEventListener('click', activateStartButton)
-
+sectionLeft.addEventListener('click', activateCategory);
+secondLine.addEventListener('onKeyDown', checkInput);
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ITERATION 2 - BUTTON COLORS ON click Even
 function activateCategory(event) {
   if (event.target.closest('.study-btn')) {
     console.log(`study button has been pressed`)
@@ -37,19 +27,19 @@ function activateCategory(event) {
   } else if (event.target.closest('.meditate-btn')) {
     colorMeditateBtn();
   } else if (event.target.closest('.exercise-btn')) {
-  console.log(`study button has been pressed`)
   colorExerciseBtn();
-  }
+} else if (event.target.closest('.start-circle-timer')) {
+  currentActivity.startTimer()
+} else if (event.target.closest('.start-activity-button')){
+  activateStartButton();
 }
-
-
-
-function startCircleButton() {
-  if(event.target.closest('.start-timer')) {
-    console.log(`circle butts`)
-    currentActivity.startTimer()
-  }
 }
+//~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
+
+//function logActivityButton() {
+//if(event.target.closest('.log-activity-button')) {
+//console.log('the log activity button is working')
+//}
 
 function checkInput(event){
   if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
@@ -57,7 +47,7 @@ function checkInput(event){
   }
 }
 
-function colorStudyBtn(event) {
+function colorStudyBtn() {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <span class="study">Study</span>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
@@ -68,10 +58,9 @@ function colorStudyBtn(event) {
   studyButton.classList.add('active')
   meditateButton.classList.remove('meditate')
   exerciseButton.classList.remove('exercise')
-
 }
 
-function colorExerciseBtn(event) {
+function colorExerciseBtn() {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
   <span class="exercise">Exercise</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
@@ -84,7 +73,7 @@ function colorExerciseBtn(event) {
   studyButton.classList.remove('study')
   }
 
-function colorMeditateBtn(event) {
+function colorMeditateBtn() {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
   <span class="meditate">Meditate</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
@@ -96,15 +85,10 @@ function colorMeditateBtn(event) {
   studyButton.classList.remove('study')
   exerciseButton.classList.remove('exercise')
 }
-
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
   var errorCheckResult = checkError()
   if(errorCheckResult === false) {
-  // if(currentGoal.value === '' ||
-  //   currentMinutes === '' || currentSeconds === '' || checkBox === false) {
-  //   alert ('You need to complete all four forms before continuing!')
-  //   } else {
       createNewActivity()
       renderCurrentActivity();
       console.log('this is working')
@@ -115,7 +99,6 @@ function checkError() {
   var checkBox = checkActiveCategory();
   var categoryBoxes = document.querySelector('.category-boxes')
   if (currentGoal.value === '') {
-    console.log(`currentGoals is working!!!!!`)
     currentGoal.insertAdjacentHTML('afterend', `<span class='error'><img src='./assets/warning.svg'/>You need a description</span>`)
     return true
   } else if (currentMinutes.value === '' || currentSeconds.value === '') {
@@ -128,10 +111,6 @@ function checkError() {
   return false
 }
 
-
-//~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
-
-// var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
   var btnArray = document.querySelectorAll(".choice-button");
@@ -174,18 +153,7 @@ function renderCurrentActivity(){
           <div class="timer-container">
             <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}</p>
           </div>
-          <button type='button' class="start-timer text-main-color ${currentActivity.category}">start</button>
+          <button type='button' class="start-circle-timer text-main-color ${currentActivity.category}">start</button>
         </div>
       </section>`
 }
-
-/* handling input from forms in ROMCOM, could be useful for Activity function
-function displayMyCover() {
-  coverImage.src = userCoverInput.value
-  return coverImage.src;
-*/
-//~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
-// function hideHomePage(){
-//   sectionLeft.classList.add('hidden')
-//   currentSectionLeft.classList.remove('hidden')
-// }

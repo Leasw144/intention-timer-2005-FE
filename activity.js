@@ -22,15 +22,26 @@ class Activity {
         clearInterval(timeLeft)
         currentActivity.markComplete()
       }
-      
-    }, 1000) 
-  console.log(`than umm uh I guess we completely stop the clock`)
+
+    }, 1000)
   }
 
   markComplete(){
-    alert("Congratulations!");
     this.completed = true;
-    timer.innerHTML = `0:00`
+    sectionLeft.innerHTML = `
+      <h2 class="new-activity-title">Current Activity</h2>
+      <div class="container">
+        <h1 class="current-activity-description">${currentActivity.description}</h1>
+        <div class="timer-container">
+          <p id="timer"> 0:00 </p>
+        </div>
+        <div class="timer-container">
+          <button type="button" class="start-circle-timer text-main-color ${currentActivity.category}">COMPLETED!!</button>
+        </div>
+        <div class="log-activity-container">
+          <button type="button" class="log-activity-button text-main-color"> Log Activity </button>
+        </div>
+      </div> `
   }
 
   saveToStorage(){
@@ -45,10 +56,4 @@ class Activity {
       }
     }
   }
-
-
-// convert number of minutes into Seconds
-// set total number of seconds = to num var
-// create a for loop that calculates time per second,
-// for each second subtracted,
 }
