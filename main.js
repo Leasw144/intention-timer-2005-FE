@@ -19,6 +19,7 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sectionLeft.addEventListener('click', startCircleButton)
 categoryBoxes.addEventListener('click', activateCategory);
 currentMinutes.addEventListener('onKeyDown', checkInput);
 currentSeconds.addEventListener('onKeyDown', checkInput);
@@ -53,6 +54,12 @@ function activateCategory(event) {
   }
 }
 
+function startCircleButton() {
+  if(event.target.closest('.start-timer')) {
+    console.log(`circle butts`)
+    currentActivity.startTimer()
+  }
+}
 
 function checkInput(event){
   if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
