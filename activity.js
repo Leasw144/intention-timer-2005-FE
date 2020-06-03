@@ -11,17 +11,24 @@ class Activity {
 
   startTimer(){
     var timer = document.querySelector('#timer');
-    var counter = 0
-    var timeLeft = ((this.minutes) + (this.seconds))
-    function timeIt(){
-      counter++;
-      console.log(timeLeft-counter)
-      timer.innerHTML = (timeLeft-counter)
-      if ((timeLeft-counter) <= 0) {
-        return ("Congratulations!")
+    var timeLeft = setInterval(function() {
+      timer.innerHTML = `${currentActivity.minutes} : ${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}`
+      currentActivity.seconds--
+      if(currentActivity.seconds < 0) {
+        currentActivity.seconds = 59
+        currentActivity.minutes--
+      } else if() {
+        
       }
-    }
-    setInterval(timeIt, 1000);
+
+      // debugger
+      //   if (this.seconds > 60) {
+      //     this.seconds = 0;
+      //   alert('Congratulations');
+      //   }
+      }, 1000) 
+    
+
   }
 
   markComplete(){
