@@ -9,6 +9,7 @@ var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
 var completedActivityPage = document.querySelector('.completedActivity-page')
 var sectionLeft = document.querySelector('.section-left')
+var sectionRight = document.querySelector('.section-right')
 var currentSectionLeft = document.querySelector('.current-section-left')
 var hidden = document.querySelector('.hidden')
 var secondLine = document.querySelector('.second-line')
@@ -27,24 +28,46 @@ function activateCategory(event) {
   } else if (event.target.closest('.meditate-btn')) {
     colorMeditateBtn();
   } else if (event.target.closest('.exercise-btn')) {
-  colorExerciseBtn();
-} else if (event.target.closest('.start-circle-timer')) {
-  currentActivity.startTimer()
-} else if (event.target.closest('.start-activity-button')){
-  activateStartButton();
+    colorExerciseBtn();
+  } else if (event.target.closest('.start-circle-timer')) {
+    currentActivity.startTimer()
+  } else if (event.target.closest('.start-activity-button')){
+    activateStartButton();
+  } else if (event.target.closest('.log-activity-button')){
+    logActivity();
+  } else if (event.target.closest('.new-activity-button')){
+    returnMainPage();
+  }
 }
-}
-//~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
 
-//function logActivityButton() {
-//if(event.target.closest('.log-activity-button')) {
-//console.log('the log activity button is working')
-//}
+//~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
 
 function checkInput(event){
   if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
     event.preventDefault()
   }
+}
+
+function logActivity() {
+  sectionRight.innerHTML =`
+  <h2 class="past-activities-title"> Completed Activities</h2>
+    <div class="category-cards">
+      <div class="logged-card">
+        <h3 class="category-card-title"</h3>
+          <p class="logged-time"> ${currentActivity.minutes} : ${currentActivity.seconds}</p>
+          <p class="logged-activity">${currentActivity.description}</p>
+      </div>
+    </div>`;
+  sectionLeft.innerHTML =`
+    <section class="new-activity-container">
+    <span class="start-activity-area">
+      <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
+    </span>
+    </section>`
+}
+
+function returnMainPage(){
+  location.reload();
 }
 
 function colorStudyBtn() {
