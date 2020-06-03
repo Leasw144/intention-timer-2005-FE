@@ -3,7 +3,6 @@ var studyButton = document.querySelector('.study-btn')
 var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startCircleButton = document.querySelector('.start-circle-timer')
-var eachButton = document.querySelector('.choice-button')
 var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')

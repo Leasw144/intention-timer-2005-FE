@@ -35,12 +35,13 @@ class Activity {
         <div class="timer-container">
           <p id="timer"> 0:00 </p>
         </div>
-      <div>
-        <button type="button" class="start-timer text-main-color ${currentActivity.category}">COMPLETED!!</button>
-      </div>
-      <div class="log-activity-container">
-        <button type="button" class="log-activity-button text-main-color"> Log Activity </button>
-      <div>`
+        <div class="timer-container">
+          <button type="button" class="start-circle-timer text-main-color ${currentActivity.category}">COMPLETED!!</button>
+        </div>
+        <div class="log-activity-container">
+          <button type="button" class="log-activity-button text-main-color"> Log Activity </button>
+        </div>
+      </div> `
   }
 
   saveToStorage(){
