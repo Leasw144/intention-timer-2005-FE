@@ -22,8 +22,8 @@ var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sectionLeft.addEventListener('click', startCircleButton)
 categoryBoxes.addEventListener('click', activateCategory);
-currentMinutes.addEventListener('onKeyDown', checkInput);
-currentSeconds.addEventListener('onKeyDown', checkInput);
+secondLine.addEventListener('onKeyDown', checkInput);
+//currentSeconds.addEventListener('onKeyDown', checkInput);
 startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
@@ -57,7 +57,7 @@ function checkInput(event){
   }
 }
 
-function colorStudyBtn(event) {
+function colorStudyBtn() {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <span class="study">Study</span>`;
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
@@ -70,7 +70,7 @@ function colorStudyBtn(event) {
   exerciseButton.classList.remove('exercise')
 }
 
-function colorExerciseBtn(event) {
+function colorExerciseBtn() {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
   <span class="exercise">Exercise</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
@@ -83,7 +83,7 @@ function colorExerciseBtn(event) {
   studyButton.classList.remove('study')
   }
 
-function colorMeditateBtn(event) {
+function colorMeditateBtn() {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
   <span class="meditate">Meditate</span>`;
   studyButton.innerHTML = `<img src="./assets/study.svg"/>
