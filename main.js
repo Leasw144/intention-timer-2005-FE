@@ -33,8 +33,11 @@ function activateCategory(event) {
     currentActivity.startTimer()
   } else if (event.target.closest('.start-activity-button')){
     activateStartButton();
-  } else if (event.target.closest('.log-activity-button'))
-    logActivity()
+  } else if (event.target.closest('.log-activity-button')){
+    logActivity();
+  } else if (event.target.closest('.new-activity-button')){
+    returnMainPage();
+  }
 }
 
 //~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
@@ -54,8 +57,17 @@ function logActivity() {
           <p class="logged-time"> ${currentActivity.minutes} : ${currentActivity.seconds}</p>
           <p class="logged-activity">${currentActivity.description}</p>
       </div>
-    </div>
-  </section>`
+    </div>`;
+  sectionLeft.innerHTML =`
+    <section class="new-activity-container">
+    <span class="start-activity-area">
+      <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
+    </span>
+    </section>`
+}
+
+function returnMainPage(){
+  location.reload();
 }
 
 function colorStudyBtn() {
