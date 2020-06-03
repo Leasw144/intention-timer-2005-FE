@@ -6,6 +6,7 @@ var startActivityButton = document.querySelector('.start-activity-area')
 var startTimerButton = document.querySelector('.start-timer')
 var categoryBoxes = document.querySelector('.category-boxes')
 var eachButton = document.querySelector('.choice-button')
+var logActivityButton = document.querySelector('.logACtivityButton')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var homePage = document.querySelector('.main-page')
 var currentActivityPage = document.querySelector('.currentActivity-page')
@@ -44,10 +45,13 @@ function activateCategory(event) {
 
 function startCircleButton() {
   if(event.target.closest('.start-timer')) {
-    console.log(`circle butts`)
     currentActivity.startTimer()
   }
 }
+
+//function logActivityButton() {
+//  if(event.target.closest('.logActivityButton')) {
+//}
 
 function checkInput(event){
   if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {

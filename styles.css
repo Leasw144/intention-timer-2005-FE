@@ -281,6 +281,7 @@ font-size: 150%;
 }
 
 .log-activity-button {
+margin-top: 10px;
 height: 2.5em;
 width: 13em;
 background: #FFF;
