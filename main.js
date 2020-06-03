@@ -4,7 +4,6 @@ var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-activity-area')
 var startTimerButton = document.querySelector('.start-timer')
-//var categoryBoxes = document.querySelector('.category-boxes')
 var eachButton = document.querySelector('.choice-button')
 var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,7 +19,7 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sectionLeft.addEventListener('click', startCircleButton)
+//sectionLeft.addEventListener('click', startCircleButton)
 sectionLeft.addEventListener('click', activateCategory);
 secondLine.addEventListener('onKeyDown', checkInput);
 startActivityButton.addEventListener('click', activateStartButton)
@@ -34,14 +33,16 @@ function activateCategory(event) {
   } else if (event.target.closest('.exercise-btn')) {
   console.log(`study button has been pressed`)
   colorExerciseBtn();
-  }
+} else if (event.target.closest('.start-timer')) {
+  currentActivity.startTimer()
+}
 }
 
-function startCircleButton() {
-  if(event.target.closest('.start-timer')) {
-    currentActivity.startTimer()
-  }
-}
+// function startCircleButton() {
+//   if(event.target.closest('.start-timer')) {
+//     currentActivity.startTimer()
+//   }
+// }
 //~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
 
 //function logActivityButton() {
