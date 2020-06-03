@@ -42,8 +42,6 @@ function activateCategory(event) {
   }
 }
 
-
-
 function startCircleButton() {
   if(event.target.closest('.start-timer')) {
     console.log(`circle butts`)
@@ -128,10 +126,6 @@ function checkError() {
   return false
 }
 
-
-//~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
-
-// var completedActivities = [];
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
   var btnArray = document.querySelectorAll(".choice-button");
@@ -178,14 +172,3 @@ function renderCurrentActivity(){
         </div>
       </section>`
 }
-
-/* handling input from forms in ROMCOM, could be useful for Activity function
-function displayMyCover() {
-  coverImage.src = userCoverInput.value
-  return coverImage.src;
-*/
-//~~~~~~~~~~~Navigation~~~~~~~~~~~~~~~~~~~~~~~//
-// function hideHomePage(){
-//   sectionLeft.classList.add('hidden')
-//   currentSectionLeft.classList.remove('hidden')
-// }
