@@ -27,18 +27,6 @@ studyButton.addEventListener('click', colorStudyBtn);
 exerciseButton.addEventListener('click', colorExerciseBtn);
 meditateButton.addEventListener('click', colorMeditateBtn);
 startActivityButton.addEventListener('click', activateStartButton)
-document.addEventListener('click', function (event) {
-  if (event.target.closest('.study-btn')) {
-    console.log(`study button has been pressed`)
-    colorStudyBtn();
-  } else if (event.target.matches('.meditate-btn') || event.target.matches('meditate-button') || event.target.matches('h4')) {console.log(`study button has been pressed`)
-    colorMeditateBtn();
-  } else if (event.target.matches('.exercise-btn') || event.target.matches('exercise-button') || event.target.matches('h4')) {
-
-    console.log(`study button has been pressed`)
-    colorExerciseBtn();
-  }
-}, false);
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ITERATION 2 - BUTTON COLORS ON click Even
@@ -75,9 +63,11 @@ function colorStudyBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
   <span class="text-main-color">Exercise</span>`;
   studyButton.classList.add('study')
+  studyButton.classList.add('active')
   meditateButton.classList.remove('meditate')
   exerciseButton.classList.remove('exercise')
-  }
+
+}
 
 function colorExerciseBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise-active.svg"/>
@@ -87,6 +77,7 @@ function colorExerciseBtn(event) {
   meditateButton.innerHTML = `<img src="./assets/meditate.svg"/>
   <span class="text-main-color">Meditate</span>`;
   exerciseButton.classList.add('exercise')
+  exerciseButton.classList.add('active')
   meditateButton.classList.remove('meditate')
   studyButton.classList.remove('study')
   }
@@ -99,6 +90,7 @@ function colorMeditateBtn(event) {
   exerciseButton.innerHTML = `<img src="./assets/exercise.svg"/>
   <span class="text-main-color">Exercise</span>`;
   meditateButton.classList.add('meditate')
+  meditateButton.classList.add('active')
   studyButton.classList.remove('study')
   exerciseButton.classList.remove('exercise')
 }
@@ -135,10 +127,19 @@ function checkActiveCategory() {
   return false
 }
 
+function determineCategory() {
+  if (studyButton.classList.contains('active')) {
+    return `study`
+  } else if(exerciseButton.classList.contains('active')) {
+    return `exercise`
+  } else if (meditateButton.classList.contains('active'))
+  return `meditate`
+}
+
 function createNewActivity() {
   currentActivity = new Activity (
     // 'meditate', if this btn or this btn or this btn has the active property
-    `meditate`,
+    determineCategory(),
     currentGoal.value,
     currentMinutes.value,
     currentSeconds.value,
