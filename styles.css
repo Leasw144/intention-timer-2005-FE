@@ -134,7 +134,7 @@ label {
   padding: 2.5em 0em;
 }
 
-.start-timer {
+.start-circle-timer {
   border-radius: 100%;
   width:20em;
   height:20em;
@@ -275,7 +275,7 @@ font-size: 150%;
   font-size: auto;
 }
 
-.logActivityContainer {
+.log-activity-container {
   display: flex;
   justify-content: center;
 }

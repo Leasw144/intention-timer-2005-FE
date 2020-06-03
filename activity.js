@@ -36,10 +36,10 @@ class Activity {
           <p id="timer"> 0:00 </p>
         </div>
       <div>
-        <button type='button' class="start-timer text-main-color ${currentActivity.category}">COMPLETED!!</button>
+        <button type="button" class="start-timer text-main-color ${currentActivity.category}">COMPLETED!!</button>
       </div>
-      <div class="logActivityContainer">
-        <button type='button' class='LogActivityButton' text-main-color> Log Activity </button>
+      <div class="log-activity-container">
+        <button type="button" class="log-activity-button text-main-color"> Log Activity </button>
       <div>`
   }
 

@@ -2,8 +2,7 @@
 var studyButton = document.querySelector('.study-btn')
 var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
-var startActivityButton = document.querySelector('.start-activity-area')
-var startTimerButton = document.querySelector('.start-timer')
+var startCircleButton = document.querySelector('.start-circle-timer')
 var eachButton = document.querySelector('.choice-button')
 var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,18 +29,12 @@ function activateCategory(event) {
     colorMeditateBtn();
   } else if (event.target.closest('.exercise-btn')) {
   colorExerciseBtn();
-} else if (event.target.closest('.start-timer')) {
+} else if (event.target.closest('.start-circle-timer')) {
   currentActivity.startTimer()
 } else if (event.target.closest('.start-activity-button')){
   activateStartButton();
 }
 }
-
-// function startCircleButton() {
-//   if(event.target.closest('.start-timer')) {
-//     currentActivity.startTimer()
-//   }
-// }
 //~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
 
 //function logActivityButton() {
@@ -107,7 +100,6 @@ function checkError() {
   var checkBox = checkActiveCategory();
   var categoryBoxes = document.querySelector('.category-boxes')
   if (currentGoal.value === '') {
-    console.log(`currentGoals is working!!!!!`)
     currentGoal.insertAdjacentHTML('afterend', `<span class='error'><img src='./assets/warning.svg'/>You need a description</span>`)
     return true
   } else if (currentMinutes.value === '' || currentSeconds.value === '') {
@@ -162,7 +154,7 @@ function renderCurrentActivity(){
           <div class="timer-container">
             <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}</p>
           </div>
-          <button type='button' class="start-timer text-main-color ${currentActivity.category}">start</button>
+          <button type='button' class="start-circle-timer text-main-color ${currentActivity.category}">start</button>
         </div>
       </section>`
 }
