@@ -28,9 +28,11 @@ assets/icon files
 * Provided project manager with links to DTR and Repo.
 * We agreed that our schedules lined up with little or no interference for project work on weekday evenings and weekends and any other allotted work time in our daily schedules.
 * Utilizing kanban in the project pages for tracking and organization of project.
-* Immediately began work on Iteration 0 with driver/navigator, copious git commits.
-Thursday we completed Iteration 1 with driver/navigator(Steph driving), git commits/push/pull.
-Today, Friday, we are completing Iteration 2, driver/navigator. See project pages for Iter2 details.
-Sunday we began work around 11:30am to 3:30pm (poms included) on Iteration 3, driver/navigator and a little bit of divide and conquer, research, pseudo-coding our own ideas for the iteration. Coming together and trying various set ups to get the dom/browser working effectively with understandable DRY code in main.js completed the iteration, start on Iteration 4 tomorrow/Sunday.
-Sunday we focused on Iteration 4 and began the day together at 3pm until about 5:30pm with driver/navigator, getting stuck and taking a long break. During off-time (late night/early mornings), divide and conquer approach was used, working on various parts of iterations 0 - 3. 
-Monday/Tuesday we worked on and completed iteration 5 and looked through additional features, played around with mouseover/hover event for the mini pictures. Josh got the savedView display to work in rows instead of columns(by saving it in the correct section of innerHTML). Refactoring.
+* Immediately began work on Iteration 0 with driver/navigator, copious git commits(throughout).
+* Tuesday/Wednesday we focused Iteration 0-1 with primarily driver/navigator with html/css Steph/Linus and Jeff but Jeff also beginning work on Timer research and breakdown and all of us beginning to look at Iteration2.
+* Thursday we broke down Iteration2: Form Functionality into its features and split those up between the group.
+* Friday/weekend: Steph worked on Exercise, Meditate, or Study button functions, and CSS for the associated border and icon change of colors to give a visual indication that it has been selected. Jeff worked on the form functionality and all of its inputs requirements - with minutes and seconds fields only accept numbers, and no "e" in the user inputs. Linus took on the functionality of the start activity button and all of its features. We did divide and conquer for some of this and then would come back together for help and driver/navigator sessions to check our code and troubleshoot.
+* Tuesday and Wednesday have proved to be our most effective driving days with crunch time approaching focus was strong and team effort was present. Everyone working well together.
+* Finishing up input details to bring us to the new page with the timer and start button present - troubleshooting through many glitches, using dev tools, google, codepen, rocks, mentors, etc.
+* During off-time (late night/early mornings), divide and conquer approach was used, working on various parts of iterations 0 - 3.
+* Refactoring.
