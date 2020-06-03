@@ -13,7 +13,7 @@ var completedActivityPage = document.querySelector('.completedActivity-page')
 var sectionLeft = document.querySelector('.section-left')
 var currentSectionLeft = document.querySelector('.current-section-left')
 var hidden = document.querySelector('.hidden')
-
+var secondLine = document.querySelector('.second-line')
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
@@ -41,6 +41,8 @@ function activateCategory(event) {
   colorExerciseBtn();
   }
 }
+
+
 
 function startCircleButton() {
   if(event.target.closest('.start-timer')) {
@@ -97,18 +99,34 @@ function colorMeditateBtn(event) {
 
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
-  var checkBox = checkActiveCategory();
-  if(currentGoal === '' ||
-    currentMinutes === '' || currentSeconds === '' || checkBox === false) {
-    alert ('You need to complete all four forms before continuing!')
-    } else {
+  var errorCheckResult = checkError()
+  if(errorCheckResult === false) {
+  // if(currentGoal.value === '' ||
+  //   currentMinutes === '' || currentSeconds === '' || checkBox === false) {
+  //   alert ('You need to complete all four forms before continuing!')
+  //   } else {
       createNewActivity()
       renderCurrentActivity();
       console.log('this is working')
     }
+}
+
+function checkError() {
+  var checkBox = checkActiveCategory();
+  var categoryBoxes = document.querySelector('.category-boxes')
+  if (currentGoal.value === '') {
+    console.log(`currentGoals is working!!!!!`)
+    currentGoal.insertAdjacentHTML('afterend', `<span class='error'><img src='./assets/warning.svg'/>You need a description</span>`)
+    return true
+  } else if (currentMinutes.value === '' || currentSeconds.value === '') {
+    secondLine.insertAdjacentHTML(`afterend`, `<span class='error' display='flex'><img src='./assets/warning.svg'/>A time is needed</span>`)
+    return true
+  } else if(checkBox === false) {
+    categoryBoxes.insertAdjacentHTML(`afterend`, `<span class='error' display='flex'><img src='./assets/warning.svg'/>A category is needed</span>`)
+    return true
   }
-
-
+  return false
+}
 
 
 //~~~~~~~~~~The one source of truth~~~~~~~~~~~~~~~ /
@@ -138,7 +156,6 @@ function determineCategory() {
 
 function createNewActivity() {
   currentActivity = new Activity (
-    // 'meditate', if this btn or this btn or this btn has the active property
     determineCategory(),
     currentGoal.value,
     currentMinutes.value,
@@ -155,7 +172,7 @@ function renderCurrentActivity(){
         <div class="container">
           <h1 class="current-activity-description">${currentActivity.description}</h1>
           <div class="timer-container">
-            <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds}</p>
+            <p id="timer"> ${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}</p>
           </div>
           <button type='button' class="start-timer text-main-color ${currentActivity.category}">start</button>
         </div>
