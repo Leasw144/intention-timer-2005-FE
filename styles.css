@@ -164,8 +164,26 @@ label {
   color: #fff;
 }
 
+.hidden {
+  display: none;
+}
+
 .past-activities-title {
+  display: flex;
+  flex-direction: column;
     margin: 1.5em 0em 0.5em 0em;
+}
+
+.default-section-right-activities {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.default-section-right-para {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .logged-card {
