@@ -19,10 +19,8 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//sectionLeft.addEventListener('click', startCircleButton)
 sectionLeft.addEventListener('click', activateCategory);
 secondLine.addEventListener('onKeyDown', checkInput);
-startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateCategory(event) {
   if (event.target.closest('.study-btn')) {
@@ -31,10 +29,11 @@ function activateCategory(event) {
   } else if (event.target.closest('.meditate-btn')) {
     colorMeditateBtn();
   } else if (event.target.closest('.exercise-btn')) {
-  console.log(`study button has been pressed`)
   colorExerciseBtn();
 } else if (event.target.closest('.start-timer')) {
   currentActivity.startTimer()
+} else if (event.target.closest('.start-activity-button')){
+  activateStartButton();
 }
 }
 
@@ -94,15 +93,10 @@ function colorMeditateBtn() {
   studyButton.classList.remove('study')
   exerciseButton.classList.remove('exercise')
 }
-
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function activateStartButton(){
   var errorCheckResult = checkError()
   if(errorCheckResult === false) {
-  // if(currentGoal.value === '' ||
-  //   currentMinutes === '' || currentSeconds === '' || checkBox === false) {
-  //   alert ('You need to complete all four forms before continuing!')
-  //   } else {
       createNewActivity()
       renderCurrentActivity();
       console.log('this is working')
