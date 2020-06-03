@@ -5,13 +5,7 @@ var exerciseButton = document.querySelector('.exercise-btn')
 var startCircleButton = document.querySelector('.start-circle-timer')
 var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var homePage = document.querySelector('.main-page')
-var currentActivityPage = document.querySelector('.currentActivity-page')
-var completedActivityPage = document.querySelector('.completedActivity-page')
 var sectionLeft = document.querySelector('.section-left')
-var sectionRight = document.querySelector('.section-right')
-var currentSectionLeft = document.querySelector('.current-section-left')
-var hidden = document.querySelector('.hidden')
 var secondLine = document.querySelector('.second-line')
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
@@ -49,6 +43,7 @@ function checkInput(event){
 }
 
 function logActivity() {
+  var sectionRight = document.querySelector('.section-right');
   sectionRight.innerHTML =`
   <h2 class="past-activities-title"> Completed Activities</h2>
     <div class="category-cards">
@@ -58,6 +53,7 @@ function logActivity() {
           <p class="logged-activity">${currentActivity.description}</p>
       </div>
     </div>`;
+
   sectionLeft.innerHTML =`
     <section class="new-activity-container">
     <span class="start-activity-area">

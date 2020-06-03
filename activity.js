@@ -52,7 +52,7 @@ class Activity {
     for (let i = 0; i < completedActivities.length; i++){
     completedActivities.innerHTML = `<div class="logged-card">
       <h3 class="category-card-title ${this.category}"></h3>
-      <p class="logged-time"> ${this.minutes min : ${this.seconds} sec </p>
+      <p class="logged-time"> ${this.minutes} min : ${this.seconds} sec </p>
       <p class="logged-activity">${this.description}</p>
     </div>`
       }
