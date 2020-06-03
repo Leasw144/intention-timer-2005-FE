@@ -4,7 +4,7 @@ var meditateButton = document.querySelector('.meditate-btn')
 var exerciseButton = document.querySelector('.exercise-btn')
 var startActivityButton = document.querySelector('.start-activity-area')
 var startTimerButton = document.querySelector('.start-timer')
-var categoryBoxes = document.querySelector('.category-boxes')
+//var categoryBoxes = document.querySelector('.category-boxes')
 var eachButton = document.querySelector('.choice-button')
 var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,12 +21,10 @@ var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sectionLeft.addEventListener('click', startCircleButton)
-categoryBoxes.addEventListener('click', activateCategory);
+sectionLeft.addEventListener('click', activateCategory);
 secondLine.addEventListener('onKeyDown', checkInput);
-//currentSeconds.addEventListener('onKeyDown', checkInput);
 startActivityButton.addEventListener('click', activateStartButton)
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ITERATION 2 - BUTTON COLORS ON click Even
 function activateCategory(event) {
   if (event.target.closest('.study-btn')) {
     console.log(`study button has been pressed`)
