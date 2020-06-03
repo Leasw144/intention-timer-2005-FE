@@ -35,7 +35,7 @@ assets/icon files
 * Utilizing kanban in the project pages for tracking and organization of project.
 * Immediately began work on Iteration 0 with driver/navigator, copious git commits(throughout).
 * Tuesday/Wednesday we focused Iteration 0-1 with primarily driver/navigator with html/css Steph/Linus and Jeff but Jeff also beginning work on Timer research and breakdown and all of us beginning to look at Iteration2. </br>
-![Static Comp Complete]()
+![Static Comp Complete](./assets.)
 </br>
 
 #### Thursday
@@ -55,4 +55,4 @@ assets/icon files
 
 </br>
 
-[Project Workings]https://recordit.co/ZlrAQPFyY3
+![Project Workings](https://recordit.co/ZlrAQPFyY3)
