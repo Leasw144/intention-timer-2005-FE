@@ -12,10 +12,10 @@ var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sectionLeft.addEventListener('click', activateCategory);
+sectionLeft.addEventListener('click', primaryEventHandler);
 secondLine.addEventListener('onKeyDown', checkInput);
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function activateCategory(event) {
+function primaryEventHandler(event) {
   if (event.target.closest('.study-btn')) {
     console.log(`study button has been pressed`)
     colorStudyBtn();
