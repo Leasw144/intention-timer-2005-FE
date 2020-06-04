@@ -23,10 +23,10 @@ function primaryEventHandler(event) {
     colorMeditateBtn();
   } else if (event.target.closest('.exercise-btn')) {
     colorExerciseBtn();
-  } else if (event.target.closest('.start-circle-timer')) {
-    currentActivity.startTimer()
-  } else if (event.target.closest('.start-activity-button')){
+  } else if (event.target.closest('.start-activity-button')) {
     activateStartButton();
+  } else if (event.target.closest('.start-circle-timer')){
+    currentActivity.startTimer();
   } else if (event.target.closest('.log-activity-button')){
     logActivity();
   } else if (event.target.closest('.new-activity-button')){
@@ -38,7 +38,7 @@ function primaryEventHandler(event) {
 
 function checkInput(event){
   if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
-    event.preventDefault()
+    event.preventDefault();
   }
 }
 
@@ -56,9 +56,9 @@ function logActivity() {
 
   sectionLeft.innerHTML =`
     <section class="new-activity-container">
-    <span class="start-activity-area">
-      <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
-    </span>
+      <span class="start-activity-area">
+        <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
+      </span>
     </section>`
 }
 
@@ -110,8 +110,7 @@ function activateStartButton(){
   if(errorCheckResult === false) {
       createNewActivity()
       renderCurrentActivity();
-      console.log('this is working')
-    }
+  }
 }
 
 function checkError() {
