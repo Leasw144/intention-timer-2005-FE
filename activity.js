@@ -11,8 +11,6 @@ class Activity {
 
   startTimer(){
     var timer = document.querySelector('#timer');
-    var loggedMinutes = currentActivity.minutes;
-    var loggedSeconds = currentActivity.seconds;
     timer.setAttribute('disabled', false)
     var timeLeft = setInterval(function() {
       timer.innerHTML = `${currentActivity.minutes}:${currentActivity.seconds < 10 ? '0' + currentActivity.seconds : currentActivity.seconds}`
