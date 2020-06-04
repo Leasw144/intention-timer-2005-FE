@@ -5,23 +5,17 @@ var exerciseButton = document.querySelector('.exercise-btn')
 var startCircleButton = document.querySelector('.start-circle-timer')
 var logActivityButton = document.querySelector('.log-activity-button')
 //~~~~~~~~~~~~~~~~~~~'Sections'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var homePage = document.querySelector('.main-page')
-var currentActivityPage = document.querySelector('.currentActivity-page')
-var completedActivityPage = document.querySelector('.completedActivity-page')
 var sectionLeft = document.querySelector('.section-left')
-var sectionRight = document.querySelector('.section-right')
-var currentSectionLeft = document.querySelector('.current-section-left')
-var hidden = document.querySelector('.hidden')
 var secondLine = document.querySelector('.second-line')
 //~~~~~~~~~~~~~~~'User Inputs'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGoal = document.querySelector('.goal')
 var currentMinutes = document.querySelector('.minutes')
 var currentSeconds = document.querySelector('.seconds')
 //~~~~~~~~~~~~~~~'Event Listeners'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sectionLeft.addEventListener('click', activateCategory);
+sectionLeft.addEventListener('click', primaryEventHandler);
 secondLine.addEventListener('onKeyDown', checkInput);
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function activateCategory(event) {
+function primaryEventHandler(event) {
   if (event.target.closest('.study-btn')) {
     console.log(`study button has been pressed`)
     colorStudyBtn();
@@ -29,10 +23,10 @@ function activateCategory(event) {
     colorMeditateBtn();
   } else if (event.target.closest('.exercise-btn')) {
     colorExerciseBtn();
-  } else if (event.target.closest('.start-circle-timer')) {
-    currentActivity.startTimer()
-  } else if (event.target.closest('.start-activity-button')){
+  } else if (event.target.closest('.start-activity-button')) {
     activateStartButton();
+  } else if (event.target.closest('.start-circle-timer')){
+    currentActivity.startTimer();
   } else if (event.target.closest('.log-activity-button')){
     logActivity();
   } else if (event.target.closest('.new-activity-button')){
@@ -44,11 +38,12 @@ function activateCategory(event) {
 
 function checkInput(event){
   if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
-    event.preventDefault()
+    event.preventDefault();
   }
 }
 
 function logActivity() {
+  var sectionRight = document.querySelector('.section-right');
   sectionRight.innerHTML =`
   <h2 class="past-activities-title"> Completed Activities</h2>
     <div class="category-cards">
@@ -58,11 +53,12 @@ function logActivity() {
           <p class="logged-activity">${currentActivity.description}</p>
       </div>
     </div>`;
+
   sectionLeft.innerHTML =`
     <section class="new-activity-container">
-    <span class="start-activity-area">
-      <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
-    </span>
+      <span class="start-activity-area">
+        <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
+      </span>
     </section>`
 }
 
@@ -114,8 +110,7 @@ function activateStartButton(){
   if(errorCheckResult === false) {
       createNewActivity()
       renderCurrentActivity();
-      console.log('this is working')
-    }
+  }
 }
 
 function checkError() {
