@@ -17,7 +17,6 @@ secondLine.addEventListener('onKeyDown', checkInput);
 //~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function primaryEventHandler(event) {
   if (event.target.closest('.study-btn')) {
-    console.log(`study button has been pressed`)
     colorStudyBtn();
   } else if (event.target.closest('.meditate-btn')) {
     colorMeditateBtn();
@@ -34,38 +33,7 @@ function primaryEventHandler(event) {
   }
 }
 
-//~~~~~~~~~~~~~~~~~~~MAIN FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
-
-function checkInput(event){
-  if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
-    event.preventDefault();
-  }
-}
-
-function logActivity() {
-  var sectionRight = document.querySelector('.section-right');
-  sectionRight.innerHTML =`
-  <h2 class="past-activities-title"> Completed Activities</h2>
-    <div class="category-cards">
-      <div class="logged-card">
-        <h3 class="category-card-title"</h3>
-          <p class="logged-time"> ${currentActivity.minutes} : ${currentActivity.seconds}</p>
-          <p class="logged-activity">${currentActivity.description}</p>
-      </div>
-    </div>`;
-
-  sectionLeft.innerHTML =`
-    <section class="new-activity-container">
-      <span class="start-activity-area">
-        <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
-      </span>
-    </section>`
-}
-
-function returnMainPage(){
-  location.reload();
-}
-
+//~~~~~~~~~~~~~~~~~~~HELPER FUNCTIONS~~~~~~~~~~~~~~~~~~~~~//
 function colorStudyBtn() {
   studyButton.innerHTML = `<img src="./assets/study-active.svg"/>
   <span class="study">Study</span>`;
@@ -90,7 +58,7 @@ function colorExerciseBtn() {
   exerciseButton.classList.add('active')
   meditateButton.classList.remove('meditate')
   studyButton.classList.remove('study')
-  }
+}
 
 function colorMeditateBtn() {
   meditateButton.innerHTML = `<img src="./assets/meditate-active.svg"/>
@@ -104,12 +72,13 @@ function colorMeditateBtn() {
   studyButton.classList.remove('study')
   exerciseButton.classList.remove('exercise')
 }
-//~~~~~~~~~~~~~~~'Event Handlers'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function activateStartButton(){
+
+
+function activateStartButton() {
   var errorCheckResult = checkError()
-  if(errorCheckResult === false) {
-      createNewActivity()
-      renderCurrentActivity();
+  if (errorCheckResult === false) {
+    createNewActivity()
+    renderCurrentActivity();
   }
 }
 
@@ -122,48 +91,26 @@ function checkError() {
   } else if (currentMinutes.value === '' || currentSeconds.value === '') {
     secondLine.insertAdjacentHTML(`afterend`, `<span class='error' display='flex'><img src='./assets/warning.svg'/>A time is needed</span>`)
     return true
-  } else if(checkBox === false) {
+  } else if (checkBox === false) {
     categoryBoxes.insertAdjacentHTML(`afterend`, `<span class='error' display='flex'><img src='./assets/warning.svg'/>A category is needed</span>`)
     return true
   }
   return false
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 function checkActiveCategory() {
   var btnArray = document.querySelectorAll(".choice-button");
-  for(var i = 0; i < btnArray.length; i++) {
-    console.log(btnArray[i].innerHTML)
-    if(btnArray[i].innerHTML.includes("active")) {
-      console.log('checkActiveCategory is working')
+  for (var i = 0; i < btnArray.length; i++) {
+    if (btnArray[i].innerHTML.includes("active")) {
       return true
     }
   }
   return false
 }
 
-function determineCategory() {
-  if (studyButton.classList.contains('active')) {
-    return `study`
-  } else if(exerciseButton.classList.contains('active')) {
-    return `exercise`
-  } else if (meditateButton.classList.contains('active'))
-  return `meditate`
-}
-
-function createNewActivity() {
-  currentActivity = new Activity (
-    determineCategory(),
-    currentGoal.value,
-    currentMinutes.value,
-    currentSeconds.value,
-  )
-  return currentActivity
-}
-
-function renderCurrentActivity(){
+function renderCurrentActivity() {
   createNewActivity();
-    sectionLeft.innerHTML =  `
+  sectionLeft.innerHTML = `
       <section class="text-main-color current-activity-page">
         <h2 class="new-activity-title">Current Activity</h2>
         <div class="container">
@@ -174,4 +121,54 @@ function renderCurrentActivity(){
           <button type='button' class="start-circle-timer text-main-color ${currentActivity.category}">start</button>
         </div>
       </section>`
+}
+
+function createNewActivity() {
+  currentActivity = new Activity(
+    determineCategory(),
+    currentGoal.value,
+    currentMinutes.value,
+    currentSeconds.value,
+  )
+  return currentActivity
+}
+
+function determineCategory() {
+  if (studyButton.classList.contains('active')) {
+    return `study`
+  } else if (exerciseButton.classList.contains('active')) {
+    return `exercise`
+  } else if (meditateButton.classList.contains('active'))
+    return `meditate`
+}
+
+
+
+function logActivity() {
+  var sectionRight = document.querySelector('.section-right');
+  sectionRight.innerHTML =`
+  <h2 class="past-activities-title"> Completed Activities</h2>
+  <div class="category-cards">
+  <div class="logged-card">
+        <h3 class="category-card-title"</h3>
+          <p class="logged-time"> ${currentActivity.minutes} : ${currentActivity.seconds}</p>
+          <p class="logged-activity">${currentActivity.description}</p>
+      </div>
+    </div>`;
+  sectionLeft.innerHTML =`
+    <section class="new-activity-container">
+      <span class="start-activity-area">
+        <button class="new-activity-button" type="button" value="submit">Create New Activity</button>
+      </span>
+    </section>`
+}
+
+function returnMainPage(){
+  location.reload();
+}
+
+function checkInput(event) {
+  if (event.which !== 8 && event.which !== 0 && event.which < 48 || event.which > 57) {
+    event.preventDefault();
+  }
 }
